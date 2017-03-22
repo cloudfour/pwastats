@@ -19,18 +19,19 @@
 
       {% assign resources = site.resources | sort: 'date' | reverse %}
       {% for resource in resources %}
-        <p>
-          <a href="{{ resource.sourceURL }}" target="_blank">{{ resource.title }}</a>
-        </p>
-        <p>Company: {{ resource.company }}</p>
-        <p>Published: {{ resource.date | date: "%b %d, %Y"  }}</p>
+        <article class="u-borderBottomMd u-padBottom1">
+          <h2>
+            <a href="{{ resource.sourceURL }}" target="_blank">{{ resource.title }}</a>
+          </h2>
+          <p>Company: {{ resource.company }}</p>
+          <p>Published: {{ resource.date | date: "%b %d, %Y"  }}</p>
 
-        <p><a href="{{ resource.url }}">Permalink</a></p>
+          <p><a href="{{ resource.url }}">Permalink</a></p>
 
-        {% if resource.tags.size > 0 %}
-          <p>Tags: {{ resource.tags | join: ', '}}</p>
-        {% endif %}
-        <hr>
+          {% if resource.tags.size > 0 %}
+            <p>Tags: {{ resource.tags | join: ', '}}</p>
+          {% endif %}
+        </article>
       {% endfor %}
 
     </main>
