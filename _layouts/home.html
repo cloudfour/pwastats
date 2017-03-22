@@ -3,6 +3,8 @@
   {% include head.html title=site.title %}
   <body>
     <main class="u-pad1 u-spaceItems1">
+      {% include hero.html %}
+
       {{ content }}
       <ul>
         {% for post in site.posts %}
