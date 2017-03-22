@@ -6,6 +6,8 @@
       {% include hero.html %}
 
       {{ content }}
+
+      <!--
       <ul>
         {% for post in site.posts %}
           <li>
@@ -13,6 +15,24 @@
           </li>
         {% endfor %}
       </ul>
+      -->
+
+      {% assign resources = site.resources | sort: 'date' | reverse %}
+      {% for resource in resources %}
+        <p>
+          <a href="{{ resource.sourceURL }}" target="_blank">{{ resource.title }}</a>
+        </p>
+        <p>Company: {{ resource.company }}</p>
+        <p>Published: {{ resource.date | date: "%b %d, %Y"  }}</p>
+
+        <p><a href="{{ resource.url }}">Permalink</a></p>
+
+        {% if resource.tags.size > 0 %}
+          <p>Tags: {{ resource.tags | join: ', '}}</p>
+        {% endif %}
+        <hr>
+      {% endfor %}
+
     </main>
   </body>
 </html>
