@@ -28,6 +28,12 @@ defaults:
       path: ""
     values:
       layout: post
+  -
+    scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
 
 # Build settings
 markdown: kramdown
@@ -36,3 +42,8 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+collections:
+  resources:
+    output: true
+    permalink: /:title
