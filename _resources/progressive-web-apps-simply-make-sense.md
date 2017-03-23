@@ -1,8 +1,8 @@
 ---
-title: "Progressive Web Apps Simply Make Sense"
+title: Progressive Web Apps Simply Make Sense
 date: 2017-03-21
 company: Cloud Four
-sourceURL: "https://cloudfour.com/thinks/progressive-web-apps-simply-make-sense/"
+sourceURL: https://cloudfour.com/thinks/progressive-web-apps-simply-make-sense/
 tags:
   - "2017"
 ---
