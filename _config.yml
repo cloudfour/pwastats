@@ -31,9 +31,9 @@ defaults:
   -
     scope:
       path: ""
-      type: "resources"
+      type: resources
     values:
-      layout: "resource"
+      layout: resource
 
 # Build settings
 markdown: kramdown
