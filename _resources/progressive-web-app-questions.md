@@ -4,8 +4,7 @@ date: 2017-03-17
 company: Cloud Four
 sourceURL: "https://cloudfour.com/thinks/progressive-web-app-questions/"
 tags:
-- 2017
-- pwa
+- "2017"
 - questions
 ---
 
