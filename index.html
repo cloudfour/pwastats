@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<p>This is the home page.</p>
+<button type="button" class="Button Button--primary">Fake button</button>
+
+<!--
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+-->
+
+{% assign resources = site.resources | sort: 'date' | reverse %}
+{% for resource in resources %}
+  <article class="u-borderTopMd u-padTop1">
+    <h2>
+      <a href="{{ resource.sourceURL }}" target="_blank">{{ resource.title }}</a>
+    </h2>
+    <p>Company: {{ resource.company }}</p>
+    <p>Published: {{ resource.date | date: "%b %d, %Y"  }}</p>
+
+    <p><a href="{{ resource.url }}">Permalink</a></p>
+
+    {% if resource.tags.size > 0 %}
+      <p>Tags: {{ resource.tags | join: ', '}}</p>
+    {% endif %}
+  </article>
+{% endfor %}
