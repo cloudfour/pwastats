@@ -29,7 +29,7 @@
           <p><a href="{{ resource.url }}">Permalink</a></p>
 
           {% if resource.tags.size > 0 %}
-            <p>Tags: {{ resource.tags | join: ', '}}</p>
+            {% include tags-list.html tags=resource.tags %}
           {% endif %}
         </article>
       {% endfor %}

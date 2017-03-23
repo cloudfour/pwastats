@@ -8,8 +8,8 @@ layout: default
   </h2>
   <p>Company: {{ page.company }}</p>
   <p>Published: {{ page.date | date: "%b %d, %Y"  }}</p>
-  {% if page.tags.size > 0 %}
-    <p>Tags: {{ page.tags | join: ', '}}</p>
-  {% endif %}
   {{ content }}
+  {% if page.tags.size > 0 %}
+    {% include tags-list.html tags=page.tags %}
+  {% endif %}
 </article>
