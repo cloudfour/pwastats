@@ -37,7 +37,7 @@ defaults:
   -
     scope:
       path: ""
-      type: resources_tags
+      type: resource_tags
     values:
       layout: resource_tag
 
@@ -53,6 +53,6 @@ collections:
   resources:
     output: true
     permalink: /:title
-  resources_tags:
+  resource_tags:
     output: true
     permalink: /tags/:title
