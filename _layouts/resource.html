@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  {% include head.html title=page.title %}
-  <body>
-    <main class="u-pad1 u-spaceItems1">
-      {% include hero.html %}
+---
+layout: default
+---
 
-      <article>
-        <h2>
-          <a href="{{ page.sourceURL }}" target="_blank">{{page.title}}</a>
-        </h2>
-        <p>Company: {{ page.company }}</p>
-        <p>Published: {{ page.date | date: "%b %d, %Y"  }}</p>
-        {% if page.tags.size > 0 %}
-          <p>Tags: {{ page.tags | join: ', '}}</p>
-        {% endif %}
-        {{ content }}
-      </article>
-    </main>
-  </body>
-</html>
+<article>
+  <h2>
+    <a href="{{ page.sourceURL }}" target="_blank">{{page.title}}</a>
+  </h2>
+  <p>Company: {{ page.company }}</p>
+  <p>Published: {{ page.date | date: "%b %d, %Y"  }}</p>
+  {% if page.tags.size > 0 %}
+    <p>Tags: {{ page.tags | join: ', '}}</p>
+  {% endif %}
+  {{ content }}
+</article>
