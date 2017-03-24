@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+{% assign resources = site.resources | where_exp: "item", "item.tags contains page.title" %}
+
+<h2>Resources tagged with: "{{ page.title }}" (total: {{ resources.size }})</h2>
+
+{% for resource in resources %}
+  <h3><a href="{{ resource.url }}">{{ resource.title}}</a></h3>
+{% endfor %}
