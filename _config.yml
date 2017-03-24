@@ -27,13 +27,13 @@ defaults:
     scope:
       path: ""
     values:
-      layout: post
+      layout: default
   -
     scope:
       path: ""
-      type: "resources"
+      type: resources
     values:
-      layout: "resource"
+      layout: resource
   -
     scope:
       path: ""
