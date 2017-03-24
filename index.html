@@ -15,8 +15,8 @@ layout: default
 </ul>
 -->
 
-{% assign resources = site.resources | sort: 'date' | reverse %}
-{% for resource in resources %}
+{% assign posts = site.posts | sort: 'date' | reverse %}
+{% for resource in posts %}
   <article class="u-borderTopMd u-padTop1">
     <h2>
       <a href="{{ resource.sourceURL }}" target="_blank">{{ resource.title }}</a>
