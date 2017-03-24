@@ -34,6 +34,12 @@ defaults:
       type: resources
     values:
       layout: resource
+  -
+    scope:
+      path: ""
+      type: resource_tags
+    values:
+      layout: resource_tag
 
 # Build settings
 markdown: kramdown
@@ -47,3 +53,6 @@ collections:
   resources:
     output: true
     permalink: /:title
+  resource_tags:
+    output: true
+    permalink: /tags/:title
