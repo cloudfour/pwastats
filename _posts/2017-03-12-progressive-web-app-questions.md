@@ -1,5 +1,5 @@
 ---
-layout: resource
+layout: permalink
 title: Progressive Web App questions
 date: 2017-03-12
 company: Cloud Four
