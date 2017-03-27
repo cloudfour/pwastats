@@ -1,0 +1,19 @@
+<article class="u-borderTopMd u-padTop1">
+  <h2>
+    <a href="{{ include.resource.sourceURL }}" target="_blank">{{ include.resource.title }}</a>
+  </h2>
+  <p>Company: {{ include.resource.company }}</p>
+  <p>Published: {{ include.resource.date | date: "%b %d, %Y"  }}</p>
+
+  <p><a href="{{ include.resource.url }}">Permalink</a></p>
+
+  {% if include.resource.tags.size > 0 %}
+    <ul>
+    {% for tag in include.resource.tags %}
+      <li>
+        <a href="/tags/{{ tag }}">{{ tag }}</a>
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+</article>

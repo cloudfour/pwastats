@@ -5,29 +5,7 @@ layout: default
 <p>This is the home page.</p>
 <button type="button" class="Button Button--primary">Fake button</button>
 
-<!--
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
--->
-
 {% assign posts = site.posts | sort: 'date' | reverse %}
-{% for resource in posts %}
-  <article class="u-borderTopMd u-padTop1">
-    <h2>
-      <a href="{{ resource.sourceURL }}" target="_blank">{{ resource.title }}</a>
-    </h2>
-    <p>Company: {{ resource.company }}</p>
-    <p>Published: {{ resource.date | date: "%b %d, %Y"  }}</p>
-
-    <p><a href="{{ resource.url }}">Permalink</a></p>
-
-    {% if resource.tags.size > 0 %}
-      {% include tags-list.html tags=resource.tags %}
-    {% endif %}
-  </article>
+{% for post in posts %}
+  {% include resource-item.html resource=post %}
 {% endfor %}
