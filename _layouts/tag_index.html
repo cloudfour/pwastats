@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<h2 class="page-title">{{page.title}}</h2>
+
+<ul class="slats">
+  {% for post in site.posts %}
+    {% for tag in post.tags %}
+      {% if tag == page.tag %}
+        <li>
+          <h3>
+            <a href="{{ post.sourceURL }}">{{ post.title }}</a> <small><a href="{{post.url}}">Permalink</a></small>
+          </h3>
+          <span class="tags">
+            {% for tag in post.tags %}
+              <a class="tag" href="/tags/{{tag}}">#{{tag}}</a>
+            {% endfor %}
+          </span>
+        </li>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</ul>

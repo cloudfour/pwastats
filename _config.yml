@@ -28,18 +28,6 @@ defaults:
       path: ""
     values:
       layout: default
-  -
-    scope:
-      path: ""
-      type: resources
-    values:
-      layout: resource
-  -
-    scope:
-      path: ""
-      type: resource_tags
-    values:
-      layout: resource_tag
 
 # Build settings
 markdown: kramdown
@@ -48,11 +36,3 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
-
-collections:
-  resources:
-    output: true
-    permalink: /:title
-  resource_tags:
-    output: true
-    permalink: /tags/:title
