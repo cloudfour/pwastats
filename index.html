@@ -5,16 +5,6 @@ layout: default
 <p>This is the home page.</p>
 <button type="button" class="Button Button--primary">Fake button</button>
 
-<!--
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
--->
-
 {% assign posts = site.posts | sort: 'date' | reverse %}
 {% for resource in posts %}
   <article class="u-borderTopMd u-padTop1">
