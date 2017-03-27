@@ -9,5 +9,11 @@
 
       {% include footer.html %}
     </main>
+    <script src="{{ site.github.url }}/js/main.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('{{ site.github.url }}/sw.js');
+      }
+    </script>
   </body>
 </html>
