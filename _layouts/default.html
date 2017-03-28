@@ -4,8 +4,10 @@
   <body>
     <main class="u-pad1 u-spaceItems1">
       {% include hero.html %}
-
-      {{ content }}
+      <div class="u-bgWhite">
+        {{ content }}
+        {% include contribute-story.html %}
+      </div>
     </main>
     {% include footer.html %}
     {% include svg-icons.html %}
