@@ -5,7 +5,9 @@ layout: default
 <p>This is the home page.</p>
 <button type="button" class="Button Button--primary">Fake button</button>
 
-{% assign posts = site.posts | sort: 'date' | reverse %}
+{% assign posts = paginator.posts | sort: 'date' | reverse %}
 {% for post in posts %}
   {% include resource-item.html resource=post %}
 {% endfor %}
+
+{% include pagination.html %}

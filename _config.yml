@@ -28,11 +28,13 @@ defaults:
       path: ""
     values:
       layout: default
+paginate: 6
 
 # Build settings
 markdown: kramdown
 gems:
   - jekyll-feed
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
