@@ -3,9 +3,13 @@
   {% include head.html title=page.title %}
   <body>
     <main role="main" id="main">
-      {% include hero.html %}
+      <div class="Sky Sky--clouds">
+        <div class="u-containSpread u-pad1">
+          {% include hero.html %}
+          {{ content }}
+        </div>
+      </div>
       <div class="u-bgWhite">
-        {{ content }}
         {% include contribute-story.html %}
       </div>
     </main>
