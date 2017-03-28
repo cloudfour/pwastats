@@ -28,7 +28,7 @@ defaults:
       path: ""
     values:
       layout: default
-paginate: 1
+paginate: 6
 
 # Build settings
 markdown: kramdown
