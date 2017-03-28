@@ -1,0 +1,31 @@
+{
+  "name": "pwastats",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A collection of Progressive Web App case studies.",
+  "dependencies": {
+    "sw-lib": "0.0.17",
+    "sw-precaching": "0.0.17",
+    "sw-routing": "0.0.17",
+    "sw-runtime-caching": "0.0.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:sw-helpers": "cp node_modules/sw-*/build/sw-*.min.js js/vendor/",
+    "postinstall": "npm run install:sw-helpers"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloudfour/pwastats.git"
+  },
+  "keywords": [
+    "pwa"
+  ],
+  "author": "Cloud Four",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloudfour/pwastats/issues"
+  },
+  "homepage": "https://github.com/cloudfour/pwastats#readme"
+}
