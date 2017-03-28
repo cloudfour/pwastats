@@ -1,0 +1,22 @@
+{
+  "background_color": "#456BD9",
+  "description": "A collection of Progressive Web App case studies.",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "name": "PWA Stats",
+  "orientation": "natural",
+  "short_name": "PWA Stats",
+  "start_url": "/",
+  "theme_color": "#456BD9"
+}
