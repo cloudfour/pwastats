@@ -2,10 +2,16 @@
 <html lang="en-US">
   {% include head.html title=page.title %}
   <body>
-    <main class="u-pad1 u-spaceItems1">
-      {% include hero.html %}
-
-      {{ content }}
+    <main role="main" id="main">
+      <div class="Sky Sky--clouds">
+        <div class="u-containSpread u-pad1">
+          {% include hero.html %}
+          {{ content }}
+        </div>
+      </div>
+      <div class="u-bgWhite">
+        {% include contribute-story.html %}
+      </div>
     </main>
     {% include footer.html %}
     {% include svg-icons.html %}
