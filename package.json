@@ -5,12 +5,16 @@
   "description": "A collection of Progressive Web App case studies.",
   "main": "index.js",
   "dependencies": {
-    "sw-lib": "0.0.17"
+    "sw-lib": "0.0.17",
+    "sw-precaching": "0.0.17",
+    "sw-routing": "0.0.17",
+    "sw-runtime-caching": "0.0.17"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:sw-lib": "cp node_modules/sw-lib/build/sw-lib.min.js js/vendor/"
+    "install:sw-helpers": "cp node_modules/sw-*/build/sw-*.min.js js/vendor/",
+    "postinstall": "npm run install:sw-helpers"
   },
   "repository": {
     "type": "git",
