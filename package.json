@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "description": "A collection of Progressive Web App case studies.",
-  "main": "index.js",
   "dependencies": {
     "sw-lib": "0.0.17",
     "sw-precaching": "0.0.17",
