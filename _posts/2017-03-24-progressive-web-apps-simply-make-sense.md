@@ -8,4 +8,4 @@ tags:
   - "2017"
 ---
 
-Progressive Webs Apps versus native misses the point. Here is a simple case for Progressive Web Apps.
+**Progressive Webs Apps** versus **native** misses the point. Here is a simple case for Progressive Web Apps.
