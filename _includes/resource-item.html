@@ -1,9 +1,11 @@
 <article class="Card u-borderNone">
-  <a class="Card-main" 
+  <a class="Card-main"
     href="{{ include.resource.sourceURL }}"
     target="_blank">
+    {% if include.resource.icon %}
     <img class="Card-mainObject" alt=""
-      src="https://cloudfour.com/apple-touch-icon.png">
+      src="{{ include.resource.icon }}">
+    {% endif %}
     <h2 class="Card-mainContent">
       {{ include.resource.content | markdownify }}
     </h2>
@@ -20,7 +22,7 @@
           <ul class="u-listInline">
             {% for tag in include.resource.tags %}
               <li>
-                <a class="Card-metaLink" 
+                <a class="Card-metaLink"
                   href="/tags/{{ tag }}">
                   #{{ tag }}
                 </a>
@@ -36,7 +38,7 @@
             {{ include.resource.date | date: "%b %d, %Y"  }}
           </time>
         {% else %}
-          <a class="Card-metaLink" title="Permalink" 
+          <a class="Card-metaLink" title="Permalink"
             href="{{ include.resource.url }}">
             <svg width="24" height="24" class="Icon Icon--large" role="img">
               <use xlink:href="#link"/>
