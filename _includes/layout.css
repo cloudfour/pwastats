@@ -3,7 +3,6 @@
     display: grid;
     grid-gap: 1.25rem;
     justify-items: center;
-    max-width: none;
   }
   
   @media (min-width: 22.5em) {
