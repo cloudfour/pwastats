@@ -10,7 +10,7 @@
         {% assign currPageMinusCurrOffset = paginator.page | minus: currentOffset %}
         <li{% if page < currPageMinusCurrOffset %} class="u-hidden u-sm-block"{% endif %}>
           {% if page == paginator.page %}
-            <span class="Pagination-item">
+            <span class="Pagination-item Pagination-item--muted">
               <span class="u-hiddenVisually">Currently viewing page</span>
               {{page}}
             </span>

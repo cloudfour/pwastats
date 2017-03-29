@@ -1,0 +1,24 @@
+.Masonry {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 30em;
+}
+
+@supports (display: grid) {
+  .Masonry {
+    display: grid;
+    grid-gap: 1.25rem;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
+    max-width: none;
+  }
+}
+
+.Masonry > * + * {
+  margin-top: 1.25rem;
+}
+
+@supports (display: grid) {
+  .Masonry > * + * {
+    margin-top: 0;
+  }
+}
