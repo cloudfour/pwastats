@@ -5,7 +5,7 @@
     <img class="Card-mainObject" alt=""
       src="https://cloudfour.com/apple-touch-icon.png">
     <h2 class="Card-mainContent">
-      {{ include.resource.content }}
+      {{ include.resource.content | markdownify }}
     </h2>
   </a>
   <footer class="Card-meta">
