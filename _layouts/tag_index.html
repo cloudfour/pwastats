@@ -2,12 +2,16 @@
 layout: default
 ---
 
-<h2>{{page.title}}</h2>
+<h2 class="u-textCenter">
+  {{page.title}}
+</h2>
 
-{% for post in site.posts %}
-  {% for tag in post.tags %}
-    {% if tag == page.tag %}
-      {% include resource-item.html resource=post %}
-    {% endif %}
+<div class="Masonry">
+  {% for post in site.posts %}
+    {% for tag in post.tags %}
+      {% if tag == page.tag %}
+        {% include resource-item.html resource=post %}
+      {% endif %}
+    {% endfor %}
   {% endfor %}
-{% endfor %}
+</div>
