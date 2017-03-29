@@ -2,10 +2,12 @@
   <a class="Card-main" 
     href="{{ include.resource.sourceURL }}"
     target="_blank">
+    {% if include.resource.icon %}
     <img class="Card-mainObject" alt=""
-      src="https://cloudfour.com/apple-touch-icon.png">
+      src="{{ include.resource.icon }}">
+    {% endif %}
     <h2 class="Card-mainContent">
-      {{ include.resource.title }}
+      {{ include.resource.content }}
     </h2>
   </a>
   <footer class="Card-meta">

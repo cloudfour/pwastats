@@ -4,6 +4,7 @@ title: Progressive Web App questions
 date: 2017-03-12
 company: Cloud Four
 sourceURL: https://cloudfour.com/thinks/progressive-web-app-questions/
+icon: https://www.responsivefieldday.com/apple-touch-icon-180x180-precomposed.png
 tags:
   - "2017"
   - questions
