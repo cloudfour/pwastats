@@ -1,10 +1,18 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 @supports (display: grid) {
   .Masonry {
     display: grid;
     grid-gap: 1.25rem;
     justify-items: center;
   }
-  
+
   @media (min-width: 22.5em) {
     .Masonry {
       grid-template-columns: repeat(auto-fit, minmax(20em, 1fr));
