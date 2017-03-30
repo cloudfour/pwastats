@@ -16,6 +16,7 @@
 title: PWA Stats
 email: info@cloudfour.com
 description: A collection of Progressive Web App case studies.
+repository: cloudfour/pwastats
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: cloudfour
