@@ -6,6 +6,7 @@ importScripts(
 
 // Make this always match package.json version
 const version = '0.1.0';
+const cacheName = `defaultCache_${version}`;
 
 const {
   precaching,
@@ -15,8 +16,8 @@ const {
 
 const router = new routing.Router();
 const localhost = registration.scope;
-const assetCache = new precaching.UnrevisionedCacheManager();
-
+const staticCache = new precaching.UnrevisionedCacheManager({ cacheName });
+const requestWrapper = new runtimeCaching.RequestWrapper({ cacheName })
 /**
  * Route for local CSS and JS assets
  *
@@ -26,7 +27,7 @@ const assetCache = new precaching.UnrevisionedCacheManager();
  */
 const assetRoute = new routing.RegExpRoute({
   regExp: new RegExp(`^${localhost}.*\\.(css|js)$`),
-  handler: new runtimeCaching.StaleWhileRevalidate()
+  handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
 });
 
 /**
@@ -38,7 +39,7 @@ const assetRoute = new routing.RegExpRoute({
  */
 const externalRoute = new routing.RegExpRoute({
   regExp: new RegExp('^https://cloudfour-patterns.netlify.com/.*'),
-  handler: new runtimeCaching.StaleWhileRevalidate()
+  handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
 });
 
 /**
@@ -50,13 +51,13 @@ const externalRoute = new routing.RegExpRoute({
  */
 const navRoute = new routing.NavigationRoute({
   whitelist: [/./],
-  handler: new runtimeCaching.NetworkFirst()
+  handler: new runtimeCaching.NetworkFirst({ requestWrapper })
 });
 
 /**
  * Precache resources
  */
-assetCache.addToCacheList({
+staticCache.addToCacheList({
   unrevisionedFiles: [
     '/',
     '/404/',
@@ -66,13 +67,13 @@ assetCache.addToCacheList({
 
 self.oninstall = event => {
   event.waitUntil(Promise.all([
-    assetCache.install().then(skipWaiting)
+    staticCache.install().then(skipWaiting)
   ]));
 };
 
 self.onactivate = event => {
   event.waitUntil(Promise.all([
-    assetCache.cleanup()
+    staticCache.cleanup()
   ]));
 };
 
