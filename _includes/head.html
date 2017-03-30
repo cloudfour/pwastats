@@ -1,7 +1,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-Compatible" content="ie=edge">
-  <meta name="description" content="{{ site.description }}">
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#456BD9">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Source+Code+Pro" crossorigin>
@@ -10,5 +10,5 @@
     {% include layout.css %}
   </style>
   <link rel="manifest" href="{{ site.github.url }}/manifest.json">
-  <title>{{ include.title }}</title>
+  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 </head>
