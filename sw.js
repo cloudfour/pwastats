@@ -72,9 +72,14 @@ self.oninstall = event => {
 };
 
 self.onactivate = event => {
-  event.waitUntil(Promise.all([
-    staticCache.cleanup()
-  ]));
+  caches.keys().then(keys => {
+    keys.forEach(cacheName => {
+      if (!cacheName.endsWith(version)) {
+        caches.delete(cacheName);
+      }
+    });
+  });
+  return event.waitUntil(clients.claim());
 };
 
 router.registerRoutes({
