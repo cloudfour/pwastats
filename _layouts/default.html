@@ -1,29 +1,20 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  {% include head.html title=page.title %}
-  <body>
-    <header class="Sky">
-      <div class="u-containProse u-padTop4 u-padBottom2 u-padSides1">
-        {% include hero.html %}
-      </div>
-    </header>
-    <main>
-      <div class="Sky Sky--clouds">
-        <div class="u-containSpread u-padTop2 u-padBottom5 u-padSides1 u-spaceItems2">
-          {{ content }}
-        </div>
-      </div>
-      <div class="u-bgWhite">
-        {% include contribute-story.html %}
-      </div>
-    </main>
-    {% include footer.html %}
-    {% include svg-icons.html %}
-    <script src="{{ site.github.url }}/js/main.js"></script>
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('{{ site.github.url }}/sw.js');
-      }
-    </script>
-  </body>
-</html>
+---
+layout: blank
+---
+
+<header class="Sky">
+  <div class="u-containProse u-padTop4 u-padBottom2 u-padSides1">
+    {% include hero.html %}
+  </div>
+</header>
+<main>
+  <div class="Sky Sky--clouds">
+    <div class="u-containSpread u-padTop2 u-padBottom5 u-padSides1 u-spaceItems2">
+      {{ content }}
+    </div>
+  </div>
+  <div class="u-bgWhite">
+    {% include contribute-story.html %}
+  </div>
+</main>
+{% include footer.html %}
