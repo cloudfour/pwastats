@@ -1,8 +1,8 @@
 <article class="Card u-borderNone">
   <a class="Card-main" href="{{ include.resource.sourceURL }}">
-    {% if include.resource.icon %}
+    {% if include.resource.image %}
     <img class="Card-mainObject" alt=""
-      src="{{ include.resource.icon }}">
+      src="{{ site.github.url }}/images/{{ include.resource.image }}">
     {% endif %}
     <h2 class="Card-mainContent">
       {{ include.resource.content | markdownify }}
