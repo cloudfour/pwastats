@@ -5,7 +5,8 @@ sourceURL: https://developers.google.com/web/showcase/2016/weather-channel
 image: weather-channel.png
 tags:
   - "2016"
-  - PushNotifications
+  - Notifications
+  - ServiceWorker
   - Offline
 ---
 
