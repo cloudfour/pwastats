@@ -1,5 +1,4 @@
 ---
-layout: permalink
 title: Progressive Web Apps Simply Make Sense
 date: 2017-03-24
 company: Cloud Four

@@ -1,5 +1,4 @@
 ---
-layout: permalink
 title: A PWA Story
 date: 2017-02-10
 company: Some Company
