@@ -4,7 +4,7 @@ date: 2017-03-31
 sourceURL: https://developers.google.com/web/showcase/2016/weather-channel
 image: weather-channel.png
 tags:
-  - "2016"
+  - News
   - Notifications
   - ServiceWorker
   - Offline
