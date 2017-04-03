@@ -1,6 +1,5 @@
 ---
 title: PureFormulas
-date: 2017-04-03
 sourceURL: https://www.mobify.com/customers/pureformulas/
 image: pureformulas.png
 tags:
