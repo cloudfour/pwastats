@@ -33,7 +33,7 @@
         {% if page.layout == 'permalink' %}
           <time class="u-textNoWrap"
             datetime="{{ include.resource.date | date: "%Y-%m-%d"  }}">
-            {{ include.resource.date | date: "%b %d, %Y"  }}
+            {{ include.resource.date | date: "%b %-d, %Y"  }}
           </time>
         {% else %}
           <a class="Card-metaLink" title="Permalink"
