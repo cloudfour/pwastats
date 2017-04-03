@@ -19,7 +19,7 @@
             {% if page == 1%}
               "/"
             {% else %}
-              "{{ site.paginate_path | replace: ':num', page }}"
+              "{{ site.paginate_path | replace: ':num', page | prepend: site.github.url }}"
             {% endif %}>
               {% assign pageMinusOne = paginator.page | minus: 1 %}
               {% if page == pageMinusOne %}
