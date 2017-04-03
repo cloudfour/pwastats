@@ -29,7 +29,13 @@ defaults:
       path: ""
     values:
       layout: default
-paginate: 6
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: permalink
+paginate: 12
 
 # Build settings
 markdown: kramdown

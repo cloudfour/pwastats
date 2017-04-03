@@ -1,8 +1,8 @@
 <article class="Card u-borderNone">
   <a class="Card-main" href="{{ include.resource.sourceURL }}">
-    {% if include.resource.icon %}
+    {% if include.resource.image %}
     <img class="Card-mainObject" alt=""
-      src="{{ include.resource.icon }}">
+      src="{{ site.github.url }}/images/{{ include.resource.image }}">
     {% endif %}
     <h2 class="Card-mainContent">
       {{ include.resource.content | markdownify }}
@@ -33,7 +33,7 @@
         {% if page.layout == 'permalink' %}
           <time class="u-textNoWrap"
             datetime="{{ include.resource.date | date: "%Y-%m-%d"  }}">
-            {{ include.resource.date | date: "%b %d, %Y"  }}
+            {{ include.resource.date | date: "%b %-d, %Y"  }}
           </time>
         {% else %}
           <a class="Card-metaLink" title="Permalink"
