@@ -23,6 +23,10 @@ twitter_username: cloudfour
 github_username: cloudfour
 timezone: America/Los_Angeles
 permalink: /:year/:month/:title/
+
+github:
+  repository_url: https://github.com/cloudfour/pwastats/
+
 defaults:
   -
     scope:
