@@ -11,5 +11,5 @@ tags:
   - Offline
 ---
 
-**PureFormulas**' PWA saw **23%** higher revenue than the m.dot website it
+**PureFormulas**' PWA saw **23%** higher revenue than the m.dot website it 
 replaced.
