@@ -5,7 +5,7 @@ image: weather-channel.png
 tags:
   - News
   - Notifications
-  - ServiceWorker
+  - Service Worker
   - Offline
 ---
 
