@@ -25,7 +25,7 @@ timezone: America/Los_Angeles
 permalink: /:year/:month/:title/
 
 github:
-  repository_url: https://github.com/cloudfour/pwastats/
+  repository_url: https://github.com/cloudfour/pwastats
 
 defaults:
   -
