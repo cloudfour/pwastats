@@ -37,7 +37,7 @@
           </time>
         {% else %}
           <a class="Card-metaLink" title="Permalink"
-            href="{{ include.resource.url | prepend site.github.url }}">
+            href="{{ include.resource.url | prepend:  site.github.url }}">
             <svg width="24" height="24" class="Icon Icon--large" role="img">
               <use xlink:href="#link"/>
             </svg>
