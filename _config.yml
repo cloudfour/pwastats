@@ -23,7 +23,16 @@ twitter_username: cloudfour
 github_username: cloudfour
 timezone: America/Los_Angeles
 permalink: /:year/:month/:title/
+
+github:
+  repository_url: https://github.com/cloudfour/pwastats/
+
 paginate: 12
+
+collections:
+  tags:
+    output: true
+    permalink: /tags/:title
 
 defaults:
   -
@@ -43,12 +52,6 @@ defaults:
       type: tags
     values:
       layout: tag
-
-# Tags collection
-collections:
-  tags:
-    output: true
-    permalink: /tags/:title
 
 # Build settings
 markdown: kramdown

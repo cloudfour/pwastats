@@ -17,9 +17,9 @@
           {% else %}
           <a class="Pagination-item" href=
             {% if page == 1%}
-              "/"
+              "{{ site.github.url }}/"
             {% else %}
-              "{{ site.paginate_path | replace: ':num', page }}"
+              "{{ site.paginate_path | replace: ':num', page | prepend: site.github.url }}"
             {% endif %}>
               {% assign pageMinusOne = paginator.page | minus: 1 %}
               {% if page == pageMinusOne %}
