@@ -21,7 +21,7 @@
             {% for tag in include.resource.tags %}
               <li>
                 <a class="Card-metaLink"
-                  href="{{ site.github.url }}/tags/{{ tag }}">
+                  href="{{ site.github.url }}/tags/{{ tag | slugify }}">
                   #{{ tag }}
                 </a>
               </li>

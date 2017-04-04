@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+{% assign filteredPosts = site.posts | where_exp: "post", "post.tags contains page.title" %}
+
+<h1 class="u-textCenter">
+  Tagged #{{page.title}}
+</h1>
+
+<div class="Masonry">
+  {% for post in filteredPosts %}
+    {% include resource-item.html resource=post %}
+  {% endfor %}
+</div>

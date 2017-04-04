@@ -27,6 +27,13 @@ permalink: /:year/:month/:title/
 github:
   repository_url: https://github.com/cloudfour/pwastats
 
+paginate: 12
+
+collections:
+  tags:
+    output: true
+    permalink: /tags/:title
+
 defaults:
   -
     scope:
@@ -39,7 +46,12 @@ defaults:
       type: posts
     values:
       layout: permalink
-paginate: 12
+  -
+    scope:
+      path: ""
+      type: tags
+    values:
+      layout: tag
 
 # Build settings
 markdown: kramdown

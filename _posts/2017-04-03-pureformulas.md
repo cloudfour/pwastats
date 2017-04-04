@@ -4,10 +4,10 @@ sourceURL: https://www.mobify.com/customers/pureformulas/
 image: pureformulas.png
 tags:
   - Health
-  - HomeScreen
+  - Home Screen
   - Notifications
   - Payment
-  - ServiceWorker
+  - Service Worker
   - Offline
 ---
 
