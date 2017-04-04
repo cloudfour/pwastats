@@ -23,6 +23,8 @@ twitter_username: cloudfour
 github_username: cloudfour
 timezone: America/Los_Angeles
 permalink: /:year/:month/:title/
+paginate: 12
+
 defaults:
   -
     scope:
@@ -35,7 +37,18 @@ defaults:
       type: posts
     values:
       layout: permalink
-paginate: 12
+  -
+    scope:
+      path: ""
+      type: tags
+    values:
+      layout: tag
+
+# Tags collection
+collections:
+  tags:
+    output: true
+    permalink: /tags/:title
 
 # Build settings
 markdown: kramdown
