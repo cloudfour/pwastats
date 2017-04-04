@@ -14,6 +14,7 @@ e.g. http://example.com/2017/article
 ### Tags (leave those that apply)
 
 - Background Sync
+- B2B
 - Cache Storage
 - E-commerce
 - Event
