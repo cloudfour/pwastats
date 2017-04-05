@@ -10,6 +10,14 @@ layout: default
 
 <div class="Masonry">
   {% for post in filteredPosts %}
-    {% include resource-item.html resource=post %}
+    {% include resource-item.html
+      company=post.title
+      content=post.content
+      date=post.date
+      url=post.url
+      tags=post.tags
+      sourceURL=post.sourceURL
+      image=post.image
+    %}
   {% endfor %}
 </div>
