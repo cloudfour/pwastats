@@ -3,5 +3,13 @@ layout: default
 ---
 
 <div class="u-containProse u-md-textGrow1">
-  {% include resource-item.html resource=page %}
+  {% include resource-item.html
+    company=page.title
+    content=page.content
+    date=page.date
+    url=page.url
+    tags=page.tags
+    sourceURL=page.sourceURL
+    image=page.image
+  %}
 </div>
