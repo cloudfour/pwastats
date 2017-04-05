@@ -4,7 +4,7 @@
   {% else %}
     {% assign currentOffset = 2 %}
   {% endif %}
-  <nav class="u-containProse" role="navigation">
+  <nav class="u-containProse" role="navigation" aria-label="Pagination">
     <ul class="Pagination {% if paginator.page > 1 %}Pagination--withPrevious{% endif %} {% if paginator.page < paginator.total_pages %}Pagination--withNext{% endif %}">
       {% for page in (1..paginator.total_pages) %}
         {% assign currPageMinusCurrOffset = paginator.page | minus: currentOffset %}
