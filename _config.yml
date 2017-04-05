@@ -61,3 +61,4 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - package.json
