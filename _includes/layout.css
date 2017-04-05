@@ -6,6 +6,16 @@ body {
   min-height: 100%;
 }
 
+.PwaStatsLogo-indicator {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.PwaStatsLogo:hover .PwaStatsLogo-indicator,
+.PwaStatsLogo:focus .PwaStatsLogo-indicator {
+  opacity: 1;
+}
+
 @supports (display: grid) {
   .Masonry {
     display: grid;
