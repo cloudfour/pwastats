@@ -4,7 +4,6 @@
   <body{% if layout.body_class %} class="{{ layout.body_class }}"{% endif %}>
     {{ content }}
     {% include svg-icons.html %}
-    <script src="{{ site.github.url }}/js/main.js"></script>
     <script>
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('{{ site.github.url }}/sw.js');
