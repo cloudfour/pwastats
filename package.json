@@ -17,7 +17,7 @@
     "install:sw-helpers": "cp node_modules/sw-*/build/sw-*.min.js js/vendor/",
     "postinstall": "npm run install:sw-helpers",
     "preversion": "echo BE SURE TO UPDATE THE VERSION NUMBER IN SW.JS | chalk red bold",
-    "version:bump": "npm --silent version patch",
+    "version:patch": "npm --silent version patch",
     "version:minor": "npm --silent version minor",
     "version:major": "npm --silent version major"
   },
