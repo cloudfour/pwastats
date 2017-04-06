@@ -11,21 +11,9 @@ e.g. _XYZ Company saw a 20% decrease in its landing page bounce rate after intro
 
 e.g. http://example.com/2017/article
 
-### Tags (leave those that apply)
+### Tags
 
-- Background Sync
-- B2B
-- Cache Storage
-- E-commerce
-- Event
-- Health
-- Home Screen
-- IndexedDB
-- Leisure
-- News
-- Notifications
-- Offline
-- Payment
-- Real Estate
-- Service Worker
-- Travel
+- Tag 1
+- Tag 2
+
+_List all that apply from the [tags directory](../_tags/)._
