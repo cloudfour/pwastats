@@ -26,6 +26,7 @@ permalink: /:year/:month/:title/
 
 github:
   repository_url: https://github.com/cloudfour/pwastats
+  issues_url: https://github.com/cloudfour/pwastats/issues/new
 
 paginate: 12
 
