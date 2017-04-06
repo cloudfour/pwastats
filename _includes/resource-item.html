@@ -2,7 +2,7 @@
   <a class="Card-main" href="{{ include.sourceURL }}">
     {% if include.image %}
     <img class="Card-mainObject" alt=""
-      src="{{ site.github.url }}/images/{{ include.image }}">
+      src="{{ site.url }}/images/{{ include.image }}">
     {% endif %}
     <h2 class="Card-mainContent">
       {{ include.content | markdownify }}
@@ -21,7 +21,7 @@
             {% for tag in include.tags %}
               <li>
                 <a class="Card-metaLink"
-                  href="{{ site.github.url }}/tags/{{ tag | slugify }}">
+                  href="{{ site.url }}/tags/{{ tag | slugify }}">
                   #{{ tag }}
                 </a>
               </li>
@@ -37,7 +37,7 @@
           </time>
         {% else %}
           <a class="Card-metaLink" title="Permalink"
-            href="{{ include.url | prepend: site.github.url }}">
+            href="{{ include.url | prepend: site.url }}">
             <svg width="24" height="24" class="Icon Icon--large" role="img">
               <use xlink:href="#link"/>
             </svg>
