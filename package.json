@@ -1,9 +1,10 @@
 {
   "name": "pwastats",
   "private": true,
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A collection of Progressive Web App case studies.",
   "dependencies": {
+    "sw-cacheable-response": "0.0.18",
     "sw-lib": "0.0.17",
     "sw-precaching": "0.0.17",
     "sw-routing": "0.0.17",
