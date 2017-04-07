@@ -1,4 +1,5 @@
 importScripts(
+  'js/vendor/sw-cacheable-response.min.js',
   'js/vendor/sw-routing.min.js',
   'js/vendor/sw-runtime-caching.min.js',
   'js/vendor/sw-precaching.min.js'
@@ -9,6 +10,7 @@ const version = '0.1.2';
 const cacheName = `defaultCache_${version}`;
 
 const {
+  cacheableResponse,
   precaching,
   routing,
   runtimeCaching
@@ -17,7 +19,14 @@ const {
 const router = new routing.Router();
 const localhost = registration.scope;
 const staticCache = new precaching.UnrevisionedCacheManager({ cacheName });
-const requestWrapper = new runtimeCaching.RequestWrapper({ cacheName })
+const requestWrapper = new runtimeCaching.RequestWrapper({ cacheName });
+const cdnRequestWrapper = new runtimeCaching.RequestWrapper({
+  plugins: [
+    new cacheableResponse.CacheableResponsePlugin({ statuses: [0, 200] })
+  ],
+  cacheName
+});
+
 /**
  * Route for local CSS and JS assets
  *
@@ -51,7 +60,9 @@ const externalRoute = new routing.RegExpRoute({
  */
 const cdnAssetRoute = new routing.RegExpRoute({
   regExp: new RegExp('^https:\/\/.*\.cloudfront\.net\/.*\.(png|svg)$'),
-  handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
+  handler: new runtimeCaching.StaleWhileRevalidate({
+    requestWrapper: cdnRequestWrapper
+  })
 });
 
 /**
