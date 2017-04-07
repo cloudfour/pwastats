@@ -5,7 +5,7 @@ importScripts(
 );
 
 // Make this always match package.json version
-const version = '0.1.0';
+const version = '0.1.1';
 const cacheName = `defaultCache_${version}`;
 
 const {
