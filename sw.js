@@ -5,7 +5,7 @@ importScripts(
 );
 
 // Make this always match package.json version
-const version = '0.1.1';
+const version = '0.1.2';
 const cacheName = `defaultCache_${version}`;
 
 const {
@@ -39,6 +39,18 @@ const assetRoute = new routing.RegExpRoute({
  */
 const externalRoute = new routing.RegExpRoute({
   regExp: new RegExp('^https://cloudfour-patterns.netlify.com/.*'),
+  handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
+});
+
+/**
+ * Route for assets on cloudfront.net CDN
+ *
+ * Strategy:
+ * https://developers.google.com/web/fundamentals/instant-and-offline/
+ * offline-cookbook/#stale-while-revalidate
+ */
+const cdnAssetRoute = new routing.RegExpRoute({
+  regExp: new RegExp('^https:\/\/.*\.cloudfront\.net\/.*\.(png|svg)$'),
   handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
 });
 
@@ -86,6 +98,7 @@ router.registerRoutes({
   routes: [
     assetRoute,
     externalRoute,
+    cdnAssetRoute,
     navRoute
   ]
 });
