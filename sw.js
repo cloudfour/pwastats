@@ -49,7 +49,7 @@ const externalRoute = new routing.RegExpRoute({
  * https://developers.google.com/web/fundamentals/instant-and-offline/
  * offline-cookbook/#stale-while-revalidate
  */
-const cdnRoute = new routing.RegExpRoute({
+const cdnAssetRoute = new routing.RegExpRoute({
   regExp: new RegExp('^https:\/\/.*\.cloudfront\.net\/.*\.(png|svg)$'),
   handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
 });
@@ -98,7 +98,7 @@ router.registerRoutes({
   routes: [
     assetRoute,
     externalRoute,
-    cdnRoute,
+    cdnAssetRoute,
     navRoute
   ]
 });
