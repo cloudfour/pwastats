@@ -1,7 +1,7 @@
 {
   "name": "pwastats",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A collection of Progressive Web App case studies.",
   "dependencies": {
     "sw-lib": "0.0.17",
