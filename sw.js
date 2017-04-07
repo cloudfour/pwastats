@@ -26,7 +26,7 @@ const requestWrapper = new runtimeCaching.RequestWrapper({ cacheName })
  * offline-cookbook/#stale-while-revalidate
  */
 const assetRoute = new routing.RegExpRoute({
-  regExp: new RegExp(`^${localhost}.*\\.(css|js)$`),
+  regExp: new RegExp(`^${localhost}.*\\.(css|js|png|svg)$`),
   handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
 });
 
