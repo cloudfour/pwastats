@@ -2,9 +2,15 @@
 
 > A directory of Progressive Web App case studies.
 
-## Development
+## Contributing
 
-Make sure you have Ruby 2.3 or greater (`ruby -v`).
+See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+
+## Developing
+
+This site is built with [Jekyll](https://jekyllrb.com/docs/home/).
+
+### Quick start
 
 ```sh
 git clone git@github.com:cloudfour/pwastats.git
@@ -14,6 +20,4 @@ bundle install
 jekyll serve
 ```
 
-View the local site at <http://localhost:4000>.
-
-See the [Jekyll docs](https://jekyllrb.com/docs/home/) for more.
+View the local site at http://localhost:4000.
