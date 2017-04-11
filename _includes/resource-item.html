@@ -5,7 +5,7 @@
     </h2>
     {% if include.image %}
     <img class="Card-mainObject" alt=""
-      src="{{ site.url }}/images/{{ include.image }}">
+      src="{{ include.image | prepend: site.url }}">
     {% endif %}
     <div class="Card-mainContent">
       {{ include.content | markdownify }}
