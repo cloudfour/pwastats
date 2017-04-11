@@ -2,7 +2,7 @@
   <a class="Card-main" href="{{ include.sourceURL }}">
     {% if include.image %}
     <img class="Card-mainObject" alt=""
-      src="{{ site.url }}/images/{{ include.image }}">
+      src="{{ include.image | prepend: site.url }}">
     {% endif %}
     <h2 class="Card-mainContent">
       {{ include.content | markdownify }}
