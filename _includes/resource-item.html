@@ -4,9 +4,9 @@
     <img class="Card-mainObject" alt=""
       src="{{ site.url }}/images/{{ include.image }}">
     {% endif %}
-    <h2 class="Card-mainContent">
+    <div class="Card-mainContent">
       {{ include.content | markdownify }}
-    </h2>
+    </div>
   </a>
   <footer class="Card-meta">
     {% if include.tags.size > 0 %}
