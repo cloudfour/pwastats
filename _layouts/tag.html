@@ -11,6 +11,7 @@ layout: default
 <div class="Masonry">
   {% for post in filteredPosts %}
     {% include resource-item.html
+      title=post.title
       content=post.content
       date=post.date
       url=post.url
