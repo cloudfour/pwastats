@@ -21,6 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.pwastats.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: cloudfour
 github_username: cloudfour
+author: PWA Community
 timezone: America/Los_Angeles
 permalink: /:year/:month/:title/
 
