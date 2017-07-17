@@ -16,4 +16,10 @@
   <link rel="manifest" href="{{ site.url }}/manifest.json">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
   <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-</head>
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" />
+  <meta property="og:site_name" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}"/>
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}" />
+  <meta property="og:image" content="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/pwa-stats-1280-cropped.png" />
+  </head>
