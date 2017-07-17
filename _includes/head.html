@@ -22,4 +22,10 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="{{ site.url }}" />
   <meta property="og:image" content="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/pwa-stats-1280-cropped.png" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@clourfour">
+  <meta name="twitter:creator" content="@cloudfour">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:image" content="https://29comwzoq712ml5vj5gf479x-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/pwa-stats-1280-cropped.png">
   </head>
