@@ -9,4 +9,4 @@ tags:
 - Service Worker
 ---
 
-**Garbarino** increased their conversion rate by **27%**, returning visitors by **13%**, page views by **35%** and decreased bounce rate by **9%** building a PWA.
+By building a PWA, **Garbarino** increased their conversion rate by **27%**, returning visitors by **13%**, pageviews by **35%** and decreased their bounce rate by **9%**.
