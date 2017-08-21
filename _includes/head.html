@@ -17,28 +17,26 @@
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
 
   {% if site.title %}
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
   {% endif %}
 
   {% if page.layout == 'permalink' %}
-  <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary">
   {% else %}
-  <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image">
   {% endif %}
 
   {% if site.title %}
-  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
-  <meta name="twitter:site" content="@pwastats">
-  <meta name="twitter:creator" content="@cloudfour">
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+    <meta name="twitter:site" content="@pwastats">
+    <meta name="twitter:creator" content="@cloudfour">
   {% endif %}
 
   {% if site.title %}
-    <meta property="og:site_name" content="{{ site.title }}"/>
+    <meta property="og:site_name" content="{{ site.title }}">
   {% endif %}
 
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="{{ site.url }}" />
-  <meta property="og:image" content="http://localhost:4000/images/pwa-stats-1280-cropped.png" />
+  <meta property="og:url" content="{{ site.url }}" >
+  <meta property="og:image" content="http://localhost:4000/images/pwa-stats-1280-cropped.png" >
 
   </head>
