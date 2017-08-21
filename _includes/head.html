@@ -15,5 +15,24 @@
   </style>
   <link rel="manifest" href="{{ site.url }}/manifest.json">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
-</head>
+
+  {% if site.title %}
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <meta name="twitter:title" property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+    <meta name="twitter:site" content="@pwastats">
+    <meta name="twitter:creator" content="@cloudfour">
+    <meta property="og:site_name" content="{{ site.title }}">
+  {% endif %}
+
+  {% if page.layout == 'permalink' %}
+    <meta name="twitter:card" content="summary">
+  {% else %}
+    <meta name="twitter:card" content="summary_large_image">
+  {% endif %}
+
+  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website" >
+  <meta property="og:url" content="{{ site.url }}" >
+  <meta property="og:image" content="{{ site.url }}/images/pwa-stats-1280-cropped.png" >
+
+  </head>
