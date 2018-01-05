@@ -1,4 +1,4 @@
-> **Note:** This template is for new case study content submissions only. 
+> **Note:** This template is for new case study content submissions only.
 Feel free to replace the outline below if you are submitting a general issue instead.
 
 ---
@@ -16,4 +16,4 @@ e.g. http://example.com/2017/article
 - Tag 1
 - Tag 2
 
-_List all that apply from the [tags directory](../_tags/)._
+_List all that apply from the [tags directory](../tree/master/_tags)._
