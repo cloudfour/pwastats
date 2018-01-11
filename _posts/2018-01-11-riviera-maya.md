@@ -11,4 +11,4 @@ tags:
   - Travel
 ---
 
-**Grand Velas Riviera Maya** resort increased its Black Friday conversion rate by **53%**.
+**Grand Velas Riviera Maya** resort increased its Black Friday conversion rate by **53%** due to its progressive web app's speed and notifications.
