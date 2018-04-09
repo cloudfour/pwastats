@@ -10,4 +10,4 @@ tags:
   - Travel
 ---
 
-The **Best Western River North Hotel** sees **300%** increase in Revenue with new Progressive Web App.
+The **Best Western River North Hotel** sees **300%** increase in revenue with new Progressive Web App.
