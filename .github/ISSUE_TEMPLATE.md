@@ -16,4 +16,4 @@ e.g. http://example.com/2017/article
 - Tag 1
 - Tag 2
 
-_List all that apply from the [tags directory](../tree/master/_tags)._
+_List all that apply from the [tags directory](https://github.com/cloudfour/pwastats/tree/master/_tags)._
