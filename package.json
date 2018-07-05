@@ -11,7 +11,8 @@
     "sw-runtime-caching": "0.0.17"
   },
   "devDependencies": {
-    "chalk-cli": "^3.0.0"
+    "chalk-cli": "^3.0.0",
+    "imagemin-cli": "^3.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,7 +21,8 @@
     "preversion": "echo BE SURE TO UPDATE THE VERSION NUMBER IN SW.JS | chalk red bold",
     "version:patch": "npm --silent version patch",
     "version:minor": "npm --silent version minor",
-    "version:major": "npm --silent version major"
+    "version:major": "npm --silent version major",
+    "resize-images": "mogrify -resize 90x90 images/*.png; imagemin images/*.png --out-dir images"
   },
   "repository": {
     "type": "git",
