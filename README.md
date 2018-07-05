@@ -21,3 +21,10 @@ jekyll serve
 ```
 
 View the local site at http://localhost:4000.
+
+### Resizing icons
+
+To resize all the PWA icons in images/:
+1. Install [imagemagick](https://www.imagemagick.org/script/download.php)
+2. Run `npm install` to install imageoptim
+3. Run `npm run resize-images` to resize/optimize the images
