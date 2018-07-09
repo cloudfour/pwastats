@@ -1,7 +1,8 @@
 ---
 title: The Weather Channel
 sourceURL: https://developers.google.com/web/showcase/2016/weather-channel
-image: /images/weather-channel.png
+image: /images/weather-channel
+imageExt: png
 tags:
   - News
   - Notifications

@@ -1,7 +1,8 @@
 ---
 title: AliExpress
 sourceURL: https://developers.google.com/web/showcase/2016/aliexpress
-image: /images/aliexpress.png
+image: /images/aliexpress
+imageExt: png
 tags:
   - E-commerce
   - Offline

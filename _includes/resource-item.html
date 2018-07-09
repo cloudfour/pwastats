@@ -4,8 +4,11 @@
       {{ include.title }}
     </h2>
     {% if include.image %}
-    <img class="Card-mainObject" alt=""
-      src="{{ include.image | prepend: site.url }}">
+    <img
+      class="Card-mainObject"
+      alt=""
+      src="{{ include.image }}/2x.{{ include.imageExt }}"
+      srcset="{{ include.image }}/1x.{{ include.imageExt }} 1x, {{ include.image }}/2x.{{ include.imageExt }} 2x">
     {% endif %}
     <div class="Card-mainContent">
       {{ include.content | markdownify }}
@@ -24,7 +27,7 @@
             {% for tag in include.tags %}
               <li>
                 <a class="Card-metaLink"
-                  href="{{ site.url }}/tags/{{ tag | slugify }}">
+                  href="/tags/{{ tag | slugify }}">
                   #{{ tag }}
                 </a>
               </li>
@@ -40,7 +43,7 @@
           </time>
         {% else %}
           <a class="Card-metaLink" title="Permalink"
-            href="{{ include.url | prepend: site.url }}">
+            href="{{ include.url }}">
             <svg width="24" height="24" class="Icon Icon--large" role="img">
               <use xlink:href="#link"/>
             </svg>

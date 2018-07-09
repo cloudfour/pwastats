@@ -1,7 +1,8 @@
 ---
 title: Best Western River North Hotel
 sourceURL: https://www.hospitalitynet.org/news/4086888.html
-image: /images/bestwestern.png
+image: /images/bestwestern
+imageExt: png
 tags:
   - Conversions
   - Home Screen

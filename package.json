@@ -12,7 +12,11 @@
   },
   "devDependencies": {
     "chalk-cli": "^3.0.0",
-    "imagemin-cli": "^3.0.0"
+    "imagemin": "^5.3.1",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^5.1.0",
+    "prettier": "^1.13.7",
+    "sharp": "^0.20.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -36,5 +40,8 @@
   "bugs": {
     "url": "https://github.com/cloudfour/pwastats/issues"
   },
-  "homepage": "https://github.com/cloudfour/pwastats#readme"
+  "homepage": "https://github.com/cloudfour/pwastats#readme",
+  "prettier": {
+    "singleQuote": true
+  }
 }

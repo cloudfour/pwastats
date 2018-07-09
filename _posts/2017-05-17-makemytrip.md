@@ -1,7 +1,8 @@
 ---
 title: MakeMyTrip.com
 sourceURL: https://developers.google.com/web/showcase/2017/make-my-trip
-image: /images/makemytrip.png
+image: /images/makemytrip
+imageExt: png
 tags:
   - E-commerce
   - Home Screen
