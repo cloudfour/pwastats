@@ -16,7 +16,8 @@
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^5.1.0",
     "prettier": "^1.13.7",
-    "sharp": "^0.20.5"
+    "sharp": "^0.20.5",
+    "svgo": "^1.0.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

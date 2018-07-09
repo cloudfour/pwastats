@@ -1,15 +1,18 @@
 #!/usr/bin/env node
 
-var { readdir, writeFile } = require('fs');
+var { readdir, writeFile, readFile } = require('fs');
 const { promisify } = require('util');
 const sharp = require('sharp');
 const { join, extname } = require('path');
 const imagemin = require('imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
+const SVGO = require('svgo');
+const svgo = new SVGO({});
 
 const ls = promisify(readdir);
 const writeFileAsync = promisify(writeFile);
+const readFileAsync = promisify(readFile);
 
 /**
  * @param {Buffer} image
@@ -39,11 +42,26 @@ const getExt = async name => {
   return extname(files.find(f => f.startsWith('original.')));
 };
 
+const processSvg = async name => {
+  const source = await readFileAsync(
+    join('images', name, 'original.svg'),
+    'utf8'
+  );
+  const output = (await svgo.optimize(source)).data;
+  return Promise.all([
+    writeFileAsync(join('images', name, '1x.svg'), output),
+    writeFileAsync(join('images', name, '2x.svg'), output)
+  ]);
+};
+
 /**
  * @param {string} name folder of image to read
  */
 const processImage = async name => {
   const ext = await getExt(name);
+  if (ext === '.svg') {
+    return processSvg(name);
+  }
   const inputPath = join('images', name, 'original' + ext);
   const img = sharp(inputPath);
   return Promise.all([
