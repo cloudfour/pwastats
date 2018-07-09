@@ -11,7 +11,11 @@
     "sw-runtime-caching": "0.0.17"
   },
   "devDependencies": {
-    "chalk-cli": "^3.0.0"
+    "chalk-cli": "^3.0.0",
+    "inquirer": "^6.0.0",
+    "node-fetch": "^2.1.2",
+    "request-x-ray": "^0.1.4",
+    "x-ray": "^2.3.3"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,7 +24,8 @@
     "preversion": "echo BE SURE TO UPDATE THE VERSION NUMBER IN SW.JS | chalk red bold",
     "version:patch": "npm --silent version patch",
     "version:minor": "npm --silent version minor",
-    "version:major": "npm --silent version major"
+    "version:major": "npm --silent version major",
+    "fetch-pwa-icon": "./fetch-pwa-icon.js"
   },
   "repository": {
     "type": "git",
@@ -34,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/cloudfour/pwastats/issues"
   },
-  "homepage": "https://github.com/cloudfour/pwastats#readme"
+  "homepage": "https://github.com/cloudfour/pwastats#readme",
+  "prettier": {
+    "singleQuote": true
+  }
 }
