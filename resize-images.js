@@ -30,7 +30,8 @@ const optimize = image =>
 const resizeWrite = async (image, width, name, outFile) => {
   const resized = image.resize(width);
   const outPath = join('images', name, outFile);
-  return writeFileAsync(outPath, await optimize(await resized.toBuffer()));
+  const optimized = await optimize(await resized.toBuffer());
+  return writeFileAsync(outPath, optimized);
 };
 
 /**
@@ -48,10 +49,7 @@ const processSvg = async name => {
     'utf8'
   );
   const output = (await svgo.optimize(source)).data;
-  return Promise.all([
-    writeFileAsync(join('images', name, '1x.svg'), output),
-    writeFileAsync(join('images', name, '2x.svg'), output)
-  ]);
+  return writeFileAsync(join('images', name, '2x.svg'), output);
 };
 
 /**
@@ -64,10 +62,7 @@ const processImage = async name => {
   }
   const inputPath = join('images', name, 'original' + ext);
   const img = sharp(inputPath);
-  return Promise.all([
-    resizeWrite(img, 61, name, '1x' + ext),
-    resizeWrite(img, 122, name, '2x' + ext)
-  ]);
+  return resizeWrite(img, 122, name, '2x' + ext);
 };
 
 const main = async () => {
@@ -75,4 +70,4 @@ const main = async () => {
   const processed = await Promise.all(files.map(processImage));
 };
 
-main();
+main().catch(err => console.error(err.stack));

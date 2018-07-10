@@ -7,10 +7,7 @@
     <img
       class="Card-mainObject"
       alt=""
-      src="{{ include.image }}/1x.{{ include.imageExt }}"
-      {% if include.imageExt != "svg" %}
-      srcset="{{ include.image }}/1x.{{ include.imageExt }} 1x, {{ include.image }}/2x.{{ include.imageExt }} 2x"
-      {% endif %}
+      src="{{ include.image }}/2x.{{ include.imageExt }}"
     >
     {% endif %}
     <div class="Card-mainContent">
