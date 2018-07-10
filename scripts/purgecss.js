@@ -4,6 +4,7 @@ const Purgecss = require('purgecss');
 const fetch = require('node-fetch');
 const { writeFileSync } = require('fs');
 const { join } = require('path');
+const mkdir = require('make-dir');
 
 const main = async () => {
   const originalCss = await fetch(
@@ -16,6 +17,7 @@ const main = async () => {
     rejected: true
   });
   const result = purgeCss.purge();
+  await mkdir('_site');
   writeFileSync(join('_site', 'main.css'), result[0].css);
 };
 
