@@ -35,18 +35,6 @@ const assetRoute = new routing.RegExpRoute({
 });
 
 /**
- * Route for our pattern library
- *
- * Strategy:
- * https://developers.google.com/web/fundamentals/instant-and-offline/
- * offline-cookbook/#stale-while-revalidate
- */
-const externalRoute = new routing.RegExpRoute({
-  regExp: new RegExp('^https://cloudfour-patterns.netlify.com/.*'),
-  handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
-});
-
-/**
  * Route for assets on cloudfront.net CDN
  *
  * Strategy:
