@@ -17,7 +17,19 @@ git clone git@github.com:cloudfour/pwastats.git
 cd pwastats
 gem install bundler
 bundle install
-jekyll serve
+npm install
+```
+
+For local development:
+
+```
+npm start
+```
+
+For a single build:
+
+```
+npm run build
 ```
 
 View the local site at http://localhost:4000.

@@ -3,9 +3,10 @@
 const Purgecss = require('purgecss');
 const fetch = require('node-fetch');
 const { writeFileSync } = require('fs');
-const { join } = require('path');
-const mkdir = require('make-dir');
 
+/**
+ * Fetches the latest css from the pattern library, and extracts the used css from it to main.css
+ */
 const main = async () => {
   const originalCss = await fetch(
     'https://cloudfour-patterns.netlify.com/assets/toolkit/styles/toolkit.css'
@@ -17,8 +18,9 @@ const main = async () => {
     rejected: true
   });
   const result = purgeCss.purge();
-  await mkdir('_site');
-  writeFileSync(join('_site', 'main.css'), result[0].css);
+  // This does not output in _site because jekyll will delete it
+  // outputs in the root instead because then jekyll will copy it to _site
+  writeFileSync('main.css', result[0].css);
 };
 
 main();
