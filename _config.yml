@@ -67,3 +67,4 @@ exclude:
   - LICENSE
   - README.md
   - node_modules
+  - scripts
