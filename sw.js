@@ -42,7 +42,7 @@ const assetRoute = new routing.RegExpRoute({
  * offline-cookbook/#stale-while-revalidate
  */
 const cdnAssetRoute = new routing.RegExpRoute({
-  regExp: new RegExp('^https://.*.cloudfront.net/.*.(png|svg)$'),
+  regExp: new RegExp('^https://.*\\.cloudfront\\.net/.*\\.(png|svg)$'),
   handler: new runtimeCaching.StaleWhileRevalidate({
     requestWrapper: cdnRequestWrapper
   })
