@@ -11,7 +11,7 @@ const main = async () => {
   const originalCss = await fetch(
     'https://cloudfour-patterns.netlify.com/assets/toolkit/styles/toolkit.css'
   ).then(res => res.text());
-  console.log('fetched toolkit css, starting purging process');
+  console.log('Fetched toolkit css, starting purging process');
   const purgeCss = new Purgecss({
     content: ['**/*.html'],
     css: [{ raw: originalCss }],
