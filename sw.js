@@ -83,7 +83,7 @@ self.onactivate = event => {
 };
 
 router.registerRoutes({
-  routes: [assetRoute, externalRoute, cdnAssetRoute, navRoute]
+  routes: [assetRoute, cdnAssetRoute, navRoute]
 });
 
 /**
