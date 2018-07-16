@@ -75,7 +75,7 @@ const main = async () => {
   }
   const img = await fetch(icon, { headers }).then(d => d.buffer());
   // remove query params from extension
-  const ext = extname(icon).replace(/\?.*/, '');
+  const ext = extname(icon).replace(/\?.*$/, '');
   const path = join(dir, 'original' + ext);
   writeFileSync(path, img);
   console.log(`created file ${path}`);
