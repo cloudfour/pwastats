@@ -33,3 +33,10 @@ npm run build
 ```
 
 View the local site at http://localhost:4000.
+
+### Resizing icons
+
+To resize all the PWA icons in `images`:
+
+1.  Run `npm install` to install the dependencies
+2.  Run `npm run resize-images` to automatically generate optimized 1x and 2x versions of the images
