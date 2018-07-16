@@ -40,7 +40,7 @@ workbox.routing.registerRoute(
         maxEntries: 30
       }),
       new workbox.cacheableResponse.Plugin({
-        statuses: [0, 200]
+        statuses: [200]
       })
     ]
   })
