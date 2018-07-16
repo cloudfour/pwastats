@@ -1,8 +1,6 @@
 ---
 title: BookMyShow
 sourceURL: https://developers.google.com/web/showcase/2017/bookmyshow
-image: /images/bookmyshow
-imageExt: png
 tags:
 - App Shell
 - E-commerce

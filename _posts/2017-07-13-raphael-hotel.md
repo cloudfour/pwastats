@@ -1,8 +1,6 @@
 ---
 title: Raphael Hotel
 sourceURL: http://www.prweb.com/releases/2017/07/prweb14501233.htm
-image: /images/raphael-hotel
-imageExt: png
 tags:
 - Conversions 
 - Engagement 

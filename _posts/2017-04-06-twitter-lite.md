@@ -1,8 +1,6 @@
 ---
 title: Twitter Lite
 sourceURL: https://blog.twitter.com/2017/how-we-built-twitter-lite
-image: /images/twitter-lite
-imageExt: png
 tags:
   - App Shell
   - Home Screen

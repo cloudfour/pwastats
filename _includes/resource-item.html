@@ -3,13 +3,11 @@
     <h2 class="u-hiddenVisually">
       {{ include.title }}
     </h2>
-    {% if include.image and include.imageExt %}
     <img
       class="Card-mainObject"
       alt=""
-      src="{{ include.image }}/2x.{{ include.imageExt }}"
+      src="/images/{{ include.slug }}/2x.{{ include.imageExt | default: 'png' }}"
     >
-    {% endif %}
     <div class="Card-mainContent">
       {{ include.content | markdownify }}
     </div>

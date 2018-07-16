@@ -1,8 +1,6 @@
 ---
 title: Garbarino
 sourceURL: https://medium.com/@leopittelli/building-a-pwa-in-argentina-3ac669eabbeb
-image: /images/garbarino-icon
-imageExt: png
 tags:
 - E-commerce 
 - Home Screen 
