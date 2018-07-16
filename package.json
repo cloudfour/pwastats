@@ -14,6 +14,7 @@
     "chalk-cli": "^3.0.0",
     "inquirer": "^6.0.0",
     "node-fetch": "^2.1.2",
+    "purgecss": "^1.0.1",
     "request-x-ray": "^0.1.4",
     "x-ray": "^2.3.3"
   },
@@ -25,7 +26,10 @@
     "version:patch": "npm --silent version patch",
     "version:minor": "npm --silent version minor",
     "version:major": "npm --silent version major",
-    "fetch-pwa-icon": "./fetch-pwa-icon.js"
+    "fetch-pwa-icon": "./fetch-pwa-icon.js",
+    "purgecss": "./scripts/purgecss.js",
+    "start": "npm run purgecss; bundle exec jekyll serve",
+    "build": "npm run purgecss; bundle exec jekyll build"
   },
   "repository": {
     "type": "git",

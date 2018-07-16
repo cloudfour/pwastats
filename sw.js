@@ -9,12 +9,7 @@ importScripts(
 const version = '0.1.3';
 const cacheName = `defaultCache_${version}`;
 
-const {
-  cacheableResponse,
-  precaching,
-  routing,
-  runtimeCaching
-} = goog;
+const { cacheableResponse, precaching, routing, runtimeCaching } = goog;
 
 const router = new routing.Router();
 const localhost = registration.scope;
@@ -40,18 +35,6 @@ const assetRoute = new routing.RegExpRoute({
 });
 
 /**
- * Route for our pattern library
- *
- * Strategy:
- * https://developers.google.com/web/fundamentals/instant-and-offline/
- * offline-cookbook/#stale-while-revalidate
- */
-const externalRoute = new routing.RegExpRoute({
-  regExp: new RegExp('^https://cloudfour-patterns.netlify.com/.*'),
-  handler: new runtimeCaching.StaleWhileRevalidate({ requestWrapper })
-});
-
-/**
  * Route for assets on cloudfront.net CDN
  *
  * Strategy:
@@ -59,7 +42,7 @@ const externalRoute = new routing.RegExpRoute({
  * offline-cookbook/#stale-while-revalidate
  */
 const cdnAssetRoute = new routing.RegExpRoute({
-  regExp: new RegExp('^https:\/\/.*\.cloudfront\.net\/.*\.(png|svg)$'),
+  regExp: new RegExp('^https://.*\\.cloudfront\\.net/.*\\.(png|svg)$'),
   handler: new runtimeCaching.StaleWhileRevalidate({
     requestWrapper: cdnRequestWrapper
   })
@@ -81,17 +64,11 @@ const navRoute = new routing.NavigationRoute({
  * Precache resources
  */
 staticCache.addToCacheList({
-  unrevisionedFiles: [
-    '/',
-    '/404/',
-    '/error/'
-  ]
+  unrevisionedFiles: ['/', '/404/', '/error/']
 });
 
 self.oninstall = event => {
-  event.waitUntil(Promise.all([
-    staticCache.install().then(skipWaiting)
-  ]));
+  event.waitUntil(Promise.all([staticCache.install().then(skipWaiting)]));
 };
 
 self.onactivate = event => {
@@ -106,12 +83,7 @@ self.onactivate = event => {
 };
 
 router.registerRoutes({
-  routes: [
-    assetRoute,
-    externalRoute,
-    cdnAssetRoute,
-    navRoute
-  ]
+  routes: [assetRoute, cdnAssetRoute, navRoute]
 });
 
 /**
