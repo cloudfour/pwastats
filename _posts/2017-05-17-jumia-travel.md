@@ -1,7 +1,6 @@
 ---
 title: Jumia Travel
 sourceURL: https://developers.google.com/web/showcase/2017/jumia
-image: /images/jumia-travel.png
 tags:
   - App Shell
   - IndexedDB
