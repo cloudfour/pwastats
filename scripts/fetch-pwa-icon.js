@@ -80,7 +80,7 @@ const main = async () => {
   const ext = extname(icon).replace(/\?.*$/, '');
   const path = join(dir, 'original' + ext);
   writeFileSync(path, img);
-  console.log(`created file ${path}`);
+  console.log(`Created file ${path}`);
 };
 
 main().catch(err =>
