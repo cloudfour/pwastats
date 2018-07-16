@@ -12,10 +12,16 @@
   },
   "devDependencies": {
     "chalk-cli": "^3.0.0",
+    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-pngquant": "^5.1.0",
+    "imagemin": "^5.3.1",
     "inquirer": "^6.0.0",
     "node-fetch": "^2.1.2",
+    "prettier": "^1.13.7",
     "purgecss": "^1.0.1",
     "request-x-ray": "^0.1.4",
+    "sharp": "^0.20.5",
+    "svgo": "^1.0.5",
     "x-ray": "^2.3.3"
   },
   "scripts": {
@@ -27,6 +33,7 @@
     "version:minor": "npm --silent version minor",
     "version:major": "npm --silent version major",
     "fetch-pwa-icon": "./scripts/fetch-pwa-icon.js",
+    "resize-images": "./scripts/resize-images.js",
     "purgecss": "./scripts/purgecss.js",
     "start": "npm run purgecss; bundle exec jekyll serve",
     "build": "npm run purgecss; bundle exec jekyll build"

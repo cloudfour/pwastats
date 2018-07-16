@@ -41,3 +41,10 @@ npm run fetch-pwa-icon
 ```
 
 This will ask you for the PWA url and the directory to download to. It will fetch the icon from the app's `manifest.json`.
+
+### Resizing icons
+
+To resize all the PWA icons in `images`:
+
+1.  Run `npm install` to install the dependencies
+2.  Run `npm run resize-images` to automatically generate optimized 1x and 2x versions of the images

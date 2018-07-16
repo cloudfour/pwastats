@@ -1,7 +1,6 @@
 ---
 title: PureFormulas
 sourceURL: https://www.mobify.com/customers/pureformulas/
-image: /images/pureformulas.png
 tags:
   - Health
   - Home Screen

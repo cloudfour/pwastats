@@ -4,17 +4,17 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#456BD9">
-  <meta name="msapplication-config" content="{{ site.url }}/browserconfig.xml">
-  <link rel="icon" type="image/png" href="{{ site.url }}/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="{{ site.url }}/favicon-16x16.png" sizes="16x16">
-  <link rel="mask-icon" href="{{ site.url }}/safari-pinned-tab.svg" color="#456BD9">
+  <meta name="msapplication-config" content="browserconfig.xml">
+  <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#456BD9">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" crossorigin>
   <link rel="stylesheet" href="/main.css">
   <style>
     {% include layout.css %}
   </style>
-  <link rel="manifest" href="{{ site.url }}/manifest.json">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}/feed.xml">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="/feed.xml">
 
   {% if site.title %}
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
@@ -33,6 +33,6 @@
   <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="website" >
   <meta property="og:url" content="{{ site.url }}" >
-  <meta property="og:image" content="{{ site.url }}/images/pwa-stats-1280-cropped.png" >
+  <meta property="og:image" content="images/pwa-stats-1280-cropped.png" >
 
-  </head>
+</head>
