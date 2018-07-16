@@ -73,7 +73,9 @@ const main = async () => {
   if (!existsSync(dir)) {
     mkdirSync(dir);
   }
-  const img = await fetch(icon, { headers }).then(d => d.buffer());
+  const img = await fetch(url.resolve(appUrl, icon), { headers }).then(d =>
+    d.buffer()
+  );
   // remove query params from extension
   const ext = extname(icon).replace(/\?.*$/, '');
   const path = join(dir, 'original' + ext);
