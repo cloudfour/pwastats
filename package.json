@@ -26,7 +26,7 @@
     "version:patch": "npm --silent version patch",
     "version:minor": "npm --silent version minor",
     "version:major": "npm --silent version major",
-    "fetch-pwa-icon": "./fetch-pwa-icon.js",
+    "fetch-pwa-icon": "./scripts/fetch-pwa-icon.js",
     "purgecss": "./scripts/purgecss.js",
     "start": "npm run purgecss; bundle exec jekyll serve",
     "build": "npm run purgecss; bundle exec jekyll build"
