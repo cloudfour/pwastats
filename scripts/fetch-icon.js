@@ -55,8 +55,6 @@ const simplifyUrl = u => {
     .toLowerCase();
 };
 
-module.exports = simplifyUrl;
-
 const main = async () => {
   const { appUrl } = await inquirer.prompt([
     {
