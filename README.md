@@ -37,7 +37,7 @@ View the local site at http://localhost:4000.
 ### Fetching an icon for a PWA
 
 ```sh
-npm run fetch-pwa-icon
+npm run fetch-icon
 ```
 
 This will ask you for the PWA url and the directory to download to. It will fetch the icon from the app's `manifest.json`.
