@@ -40,6 +40,23 @@ const findLargestIcon = icons => {
   return { icon: icon.src, size: icon.sizes };
 };
 
+/**
+ * @param {string} u the url to retrieve the name from
+ * @returns {string|undefined}
+ */
+const simplifyUrl = u => {
+  const { hostname } = url.parse(u);
+  if (hostname === null) {
+    return undefined;
+  }
+  return hostname
+    .replace(/\.[^.]*$/, '') // remove tld (last dot and everything after it)
+    .replace(/^.*\./, '') // remove subdomains (everything up to the last dot)
+    .toLowerCase();
+};
+
+module.exports = simplifyUrl;
+
 const main = async () => {
   const { appUrl } = await inquirer.prompt([
     {
@@ -66,7 +83,8 @@ const main = async () => {
     {
       name: 'name',
       type: 'input',
-      message: 'Folder name in `images`'
+      message: 'Folder name in `images`',
+      default: simplifyUrl(appUrl)
     }
   ]);
   const dir = join('images', name);
