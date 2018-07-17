@@ -5,16 +5,15 @@
   "description": "A collection of Progressive Web App case studies.",
   "dependencies": {},
   "devDependencies": {
-    "chalk-cli": "^3.0.0",
-    "imagemin-cli": "^3.0.0",
+    "imagemin": "^5.3.1",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^5.1.0",
-    "imagemin": "^5.3.1",
     "node-fetch": "^2.1.2",
     "prettier": "^1.13.7",
     "purgecss": "^1.0.1",
     "sharp": "^0.20.5",
-    "svgo": "^1.0.5"
+    "svgo": "^1.0.5",
+    "workbox-cli": "^3.4.1"
   },
   "scripts": {
     "version:patch": "npm --silent version patch",
@@ -22,8 +21,9 @@
     "version:major": "npm --silent version major",
     "resize-images": "./scripts/resize-images.js",
     "purgecss": "./scripts/purgecss.js",
-    "start": "npm run purgecss; bundle exec jekyll serve",
-    "build": "npm run purgecss; bundle exec jekyll build"
+    "inject-sw-manifest": "workbox injectManifest workbox-config.js",
+    "start": "npm run inject-sw-manifest; npm run purgecss; bundle exec jekyll serve",
+    "build": "npm run purgecss; bundle exec jekyll build; npm run inject-sw-manifest"
   },
   "repository": {
     "type": "git",

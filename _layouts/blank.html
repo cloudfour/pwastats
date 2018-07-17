@@ -6,7 +6,7 @@
     {% include svg-icons.html %}
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').catch(e => console.error('Problem installing service worker:', e));
+        navigator.serviceWorker.register('/revisioned-sw.js').catch(e => console.error('Problem installing service worker:', e));
       } else {
         console.log('Your browser does not support service workers :(');
       }

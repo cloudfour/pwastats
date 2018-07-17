@@ -65,3 +65,5 @@ exclude:
   - README.md
   - node_modules
   - scripts
+  - sw.js
+  - workbox-config.js
