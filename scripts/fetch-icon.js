@@ -7,6 +7,7 @@ const { mkdirSync, writeFileSync, existsSync } = require('fs');
 const { join, extname } = require('path');
 const url = require('url');
 const makeDriver = require('request-x-ray');
+const chalk = require('chalk');
 
 // mobile user agent because some sites only serve manifest/pwa for mobile
 const headers = {
@@ -41,6 +42,15 @@ const findLargestIcon = icons => {
 };
 
 /**
+ * Checks if a string is a url
+ * @param {string} u the url to check
+ */
+const isValidUrl = u => {
+  const p = url.parse(u);
+  return Boolean(p.protocol && p.host);
+};
+
+/**
  * @param {string} u the url to retrieve the name from
  * @returns {string|undefined}
  */
@@ -60,7 +70,8 @@ const main = async () => {
     {
       name: 'appUrl',
       type: 'input',
-      message: 'PWA URL (e.g. https://www.cloudfour.com):'
+      message: 'PWA URL (e.g. https://www.cloudfour.com):',
+      validate: u => isValidUrl(u) || 'Please enter a valid url'
     }
   ]);
   const manifestLink = await xRay(appUrl, 'link[rel="manifest"]@href')
@@ -100,6 +111,11 @@ const main = async () => {
 };
 
 main().catch(err =>
-  console.error(`Error finding icon for PWA
-${err.stack}`)
+  console.error(chalk`
+{red Error finding icon for PWA}
+{bold.red ${err.message}}
+{dim ${err.stack // remove first line (it is a duplicate of the message)
+    .split('\n')
+    .slice(1)
+    .join('\n')}}`)
 );

@@ -11,10 +11,11 @@
     "sw-runtime-caching": "0.0.17"
   },
   "devDependencies": {
+    "chalk": "^2.4.1",
     "chalk-cli": "^3.0.0",
+    "imagemin": "^5.3.1",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^5.1.0",
-    "imagemin": "^5.3.1",
     "inquirer": "^6.0.0",
     "node-fetch": "^2.1.2",
     "prettier": "^1.13.7",
