@@ -28,7 +28,7 @@
     "purgecss": "./scripts/purgecss.js",
     "inject-sw-manifest": "workbox injectManifest workbox-config.js",
     "start": "npm run inject-sw-manifest; npm run purgecss; bundle exec jekyll serve",
-    "build": "npm run purgecss; bundle exec jekyll build; npm run inject-sw-manifest"
+    "build": "npm run purgecss; bundle exec jekyll build; npm run inject-sw-manifest; cp revisioned-sw.js _site"
   },
   "repository": {
     "type": "git",
