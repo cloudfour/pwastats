@@ -83,3 +83,7 @@ self.addEventListener('activate', event => {
     )
   );
 });
+
+// Automatically start workbox
+workbox.skipWaiting();
+workbox.clientsClaim();
