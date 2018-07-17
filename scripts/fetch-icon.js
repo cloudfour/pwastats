@@ -60,7 +60,7 @@ const main = async () => {
     {
       name: 'appUrl',
       type: 'input',
-      message: 'Link to a page in the PWA'
+      message: 'PWA URL (e.g. https://www.cloudfour.com):'
     }
   ]);
   const manifestLink = await xRay(appUrl, 'link[rel="manifest"]@href')
