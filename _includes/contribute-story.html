@@ -11,9 +11,52 @@
       Contribute a Story
     </a>
   </p>
-  <img
+
+  <!--
+    This SVG matches the Portland Landscape image in the cloudfour.com footer,
+    but uses an inline SVG instead of an <img> due to this project's different
+    structure.
+
+    It is purely decorative, so has `aria-hidden="true"` (matching the empty alt
+    tag on cloudfour.com)
+
+    It has a width attribute, so if CSS doesn't load it will display at a
+    reasonable size. It does _not_ have a height attribute. Since our CSS isn't
+    modifying the height, a height attribute would remain in effect, shrinking
+    the SVG on large screens.
+  -->
+  <svg
+    width="140"
+    viewBox="0 0 140 70"
     class="u-posAbsoluteBottomRight u-size2of5 u-sm-size1of3 u-sm-spaceRight1 u-md-size1of4"
-    src="data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 140 70' width='140' height='70'%3E%3Cdefs%3E%3Cpolygon id='tree' points='0,70 30,0 60,70'/%3E%3Cuse id='tree-bg' xlink:href='%23tree' fill='%23249579'/%3E%3Cuse id='tree-fg' xlink:href='%23tree' fill='%2335C98D'/%3E%3Cg id='limbs' stroke='%23DBE5EA'%3E%3Cline x1='30' y1='30' x2='30' y2='70'/%3E%3Cline x1='30' y1='45' x2='40' y2='37'/%3E%3Cline x1='21' y1='44' x2='30' y2='50'/%3E%3Cline x1='30' y1='55' x2='40' y2='47'/%3E%3C/g%3E%3Cg id='building'%3E%3Crect x='0' y='0' width='38' height='48' fill='%23D8E5EA'/%3E%3Crect id='building-detail' x='0' y='3' width='38' height='3' fill='%239FB3BE'/%3E%3Cuse xlink:href='%23building-detail' y='6'/%3E%3C/g%3E%3C/defs%3E%3Cuse xlink:href='%23building' x='20' y='22'/%3E%3Cuse xlink:href='%23tree-bg' x='70'/%3E%3Cuse xlink:href='%23building' x='102' y='42'/%3E%3Cg transform='translate(0 14) scale(0.8)'%3E%3Cuse xlink:href='%23tree-fg'/%3E%3Cuse xlink:href='%23limbs' stroke-width='3'/%3E%3C/g%3E%3Cg transform='translate(50 28) scale(0.6)'%3E%3Cuse xlink:href='%23tree-fg'/%3E%3Cuse xlink:href='%23limbs' stroke-width='4' y='5'/%3E%3C/g%3E%3C/svg%3E%0A"
-    alt="Portland, Oregon landscape"
+    aria-hidden="true"
   >
+    <defs>
+      <polygon id="tree" points="0,70 30,0 60,70"/>
+      <use id="tree-bg" xlink:href="#tree" fill="#249579"/>
+      <use id="tree-fg" xlink:href="#tree" fill="#35C98D"/>
+      <g id="limbs" stroke="#DBE5EA">
+        <line x1="30" y1="30" x2="30" y2="70"/>
+        <line x1="30" y1="45" x2="40" y2="37"/>
+        <line x1="21" y1="44" x2="30" y2="50"/>
+        <line x1="30" y1="55" x2="40" y2="47"/>
+      </g>
+      <g id="building">
+        <rect x="0" y="0" width="38" height="48" fill="#D8E5EA"/>
+        <rect id="building-detail" x="0" y="3" width="38" height="3" fill="#9FB3BE"/>
+        <use xlink:href="#building-detail" y="6"/>
+      </g>
+    </defs>
+    <use xlink:href="#building" x="20" y="22"/>
+    <use xlink:href="#tree-bg" x="70"/>
+    <use xlink:href="#building" x="102" y="42"/>
+    <g transform="translate(0 14) scale(0.8)">
+      <use xlink:href="#tree-fg"/>
+      <use xlink:href="#limbs" stroke-width="3"/>
+    </g>
+    <g transform="translate(50 28) scale(0.6)">
+      <use xlink:href="#tree-fg"/>
+      <use xlink:href="#limbs" stroke-width="4" y="5"/>
+    </g>
+  </svg>
 </div>
