@@ -11,5 +11,43 @@
       Contribute a Story
     </a>
   </p>
-  <img class="u-posAbsoluteBottomRight u-size2of5 u-sm-size1of3 u-sm-spaceRight1 u-md-size1of4" src="https://cloudfour.com/wp-content/themes/cloudfour/static/toolkit/images/portland.svg" alt="Portland, Oregon landscape">
+
+  {% comment %}
+    This SVG is a graphic of trees and buildings.
+    It matches the "Portland Landscape" image in the cloudfour.com footer.
+  {% endcomment %}
+  <svg
+    width="140"
+    viewBox="0 0 140 70"
+    class="u-posAbsoluteBottomRight u-size2of5 u-sm-size1of3 u-sm-spaceRight1 u-md-size1of4"
+    aria-hidden="true"
+  >
+    <defs>
+      <polygon id="tree" points="0,70 30,0 60,70"/>
+      <use id="tree-bg" xlink:href="#tree" fill="#249579"/>
+      <use id="tree-fg" xlink:href="#tree" fill="#35C98D"/>
+      <g id="limbs" stroke="#DBE5EA">
+        <line x1="30" y1="30" x2="30" y2="70"/>
+        <line x1="30" y1="45" x2="40" y2="37"/>
+        <line x1="21" y1="44" x2="30" y2="50"/>
+        <line x1="30" y1="55" x2="40" y2="47"/>
+      </g>
+      <g id="building">
+        <rect x="0" y="0" width="38" height="48" fill="#D8E5EA"/>
+        <rect id="building-detail" x="0" y="3" width="38" height="3" fill="#9FB3BE"/>
+        <use xlink:href="#building-detail" y="6"/>
+      </g>
+    </defs>
+    <use xlink:href="#building" x="20" y="22"/>
+    <use xlink:href="#tree-bg" x="70"/>
+    <use xlink:href="#building" x="102" y="42"/>
+    <g transform="translate(0 14) scale(0.8)">
+      <use xlink:href="#tree-fg"/>
+      <use xlink:href="#limbs" stroke-width="3"/>
+    </g>
+    <g transform="translate(50 28) scale(0.6)">
+      <use xlink:href="#tree-fg"/>
+      <use xlink:href="#limbs" stroke-width="4" y="5"/>
+    </g>
+  </svg>
 </div>
