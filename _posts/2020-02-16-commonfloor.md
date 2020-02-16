@@ -4,7 +4,7 @@ sourceURL: https://medium.com/awebdeveloper/pwa-is-future-of-mobile-how-to-tame-
 tags:
 - App-shell
 - E-commerce
-- Perforamance
+- Performance
 - Social
 ---
 
