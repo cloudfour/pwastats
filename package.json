@@ -3,19 +3,12 @@
   "private": true,
   "version": "0.1.3",
   "description": "A collection of Progressive Web App case studies.",
-  "dependencies": {
-    "sw-cacheable-response": "0.0.18",
-    "sw-lib": "0.0.17",
-    "sw-precaching": "0.0.17",
-    "sw-routing": "0.0.17",
-    "sw-runtime-caching": "0.0.17"
-  },
+  "dependencies": {},
   "devDependencies": {
     "chalk": "^2.4.1",
-    "chalk-cli": "^3.0.0",
-    "imagemin": "^5.3.1",
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-pngquant": "^5.1.0",
+    "imagemin": "^5.3.1",
     "inquirer": "^6.0.0",
     "node-fetch": "^2.1.2",
     "prettier": "^1.13.7",
@@ -23,21 +16,19 @@
     "request-x-ray": "^0.1.4",
     "sharp": "^0.20.5",
     "svgo": "^1.0.5",
+    "workbox-cli": "^3.4.1",
     "x-ray": "^2.3.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install:sw-helpers": "cp node_modules/sw-*/build/sw-*.min.js js/vendor/",
-    "postinstall": "npm run install:sw-helpers",
-    "preversion": "echo BE SURE TO UPDATE THE VERSION NUMBER IN SW.JS | chalk red bold",
     "version:patch": "npm --silent version patch",
     "version:minor": "npm --silent version minor",
     "version:major": "npm --silent version major",
     "fetch-icon": "./scripts/fetch-icon.js",
     "resize-images": "./scripts/resize-images.js",
     "purgecss": "./scripts/purgecss.js",
-    "start": "npm run purgecss; bundle exec jekyll serve",
-    "build": "npm run purgecss; bundle exec jekyll build"
+    "inject-sw-manifest": "workbox injectManifest workbox-config.js",
+    "start": "npm run inject-sw-manifest; npm run purgecss; bundle exec jekyll serve",
+    "build": "npm run purgecss; bundle exec jekyll build; npm run inject-sw-manifest; cp revisioned-sw.js _site"
   },
   "repository": {
     "type": "git",
