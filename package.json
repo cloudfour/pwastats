@@ -11,6 +11,7 @@
     "sw-runtime-caching": "0.0.17"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
     "chalk": "^2.4.1",
     "chalk-cli": "^3.0.0",
     "imagemin": "^5.3.1",
