@@ -12,7 +12,7 @@ This site is built with [Jekyll](https://jekyllrb.com/docs/home/).
 
 ### Quick start
 
-This project relies on [Ruby](https://www.ruby-lang.org/en/), [Node](https://nodejs.org/), and [npm](https://www.npmjs.com/). Before following these steps you'll need to [set up a Ruby dev environment](https://jekyllrb.com/docs/installation/) as well as [install node and npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm) if you haven't already.
+This project relies on [Ruby](https://www.ruby-lang.org/en/), [Node](https://nodejs.org/) **< v12**, and [npm](https://www.npmjs.com/). Before following these steps you'll need to [set up a Ruby dev environment](https://jekyllrb.com/docs/installation/) as well as [install node and npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm) if you haven't already.
 
 ```sh
 git clone git@github.com:cloudfour/pwastats.git
@@ -21,6 +21,7 @@ gem install bundler
 bundle install
 npm install
 ```
+If you get loads of errors when you run `npm install` it's likely that your version of node is too _new_. Node 12 and newer will not work.
 
 For local development:
 
