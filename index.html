@@ -9,7 +9,16 @@ pagination:
 
 <div class="Masonry">
   {% for post in posts %}
-    {% include resource-item.html %}
+    {% include resource-item.html,
+        title: post.title, 
+        content: post.templateContent, 
+        date: post.date, 
+        permalink: post.url, 
+        slug: post.fileSlug, 
+        tags: post.data.tags, 
+        sourceURL: post.data.sourceURL, 
+        imageExt: post.data.imageExt 
+    %}
   {% endfor %}
 </div>
 
