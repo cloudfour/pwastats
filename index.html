@@ -1,20 +1,15 @@
 ---
 layout: default
+pagination:
+  data: collections.post
+  size: 12
+  reverse: true
+  alias: posts
 ---
 
 <div class="Masonry">
-  {% assign posts = paginator.posts | sort: 'date' | reverse %}
   {% for post in posts %}
-    {% include resource-item.html
-      title=post.title
-      content=post.content
-      date=post.date
-      url=post.url
-      tags=post.tags
-      sourceURL=post.sourceURL
-      slug=post.slug
-      imageExt=post.imageExt
-    %}
+    {% include resource-item.html %}
   {% endfor %}
 </div>
 

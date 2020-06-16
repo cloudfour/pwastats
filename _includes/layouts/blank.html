@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  {% include head.html title=page.title %}
+  {% include head.html, title: page.title %}
   <body{% if layout.body_class %} class="{{ layout.body_class }}"{% endif %}>
     {{ content }}
     {% include svg-icons.html %}

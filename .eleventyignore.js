@@ -5,3 +5,4 @@ LICENSE
 README.md
 node_modules
 scripts
+.github

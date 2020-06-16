@@ -1,28 +1,28 @@
 <article class="Card u-borderNone">
-  <a class="Card-main" href="{{ include.sourceURL }}">
+  <a class="Card-main" href="{{ post.data.sourceURL }}">
     <h2 class="u-hiddenVisually">
-      {{ include.title }}
+      {{ post.data.title }}
     </h2>
     <img
       class="Card-mainObject"
       alt=""
-      src="/images/{{ include.slug }}/2x.{{ include.imageExt | default: 'png' }}"
+      src="/images/{{post.fileSlug}}/2x.{{post.data.imageExt | default: 'png' }}"
     >
     <div class="Card-mainContent">
-      {{ include.content | markdownify }}
+      {{ post.templateContent }}
     </div>
   </a>
   <footer class="Card-meta">
-    {% if include.tags.size > 0 %}
+    {% if post.data.tags.size > 0 %}
       <h3 class="u-hiddenVisually">
         Tags
       </h3>
     {% endif %}
     <div class="Grid Grid--withGutter Grid--alignMiddle u-textShrink1">
-      {% if include.tags.size > 0 %}
+      {% if post.data.tags.size > 0 %}
         <div class="Grid-cell u-sizeFill">
           <ul class="u-listInline">
-            {% for tag in include.tags %}
+            {% for tag in post.data.tags %}
               <li>
                 <a class="Card-metaLink"
                   href="/tags/{{ tag | slugify }}">
@@ -36,12 +36,12 @@
       <p class="Grid-cell u-sizeFit u-flexExpandLeft">
         {% if page.layout == 'permalink' %}
           <time class="u-textNoWrap"
-            datetime="{{ include.date | date: "%Y-%m-%d"  }}">
-            {{ include.date | date: "%b %-d, %Y"  }}
+            datetime="{{ post.date | date: "%Y-%m-%d"  }}">
+            {{ post.date | date: "%b %-d, %Y"  }}
           </time>
         {% else %}
           <a class="Card-metaLink" title="Permalink"
-            href="{{ include.url }}">
+            href="{{ post.url }}">
             <svg width="24" height="24" class="Icon Icon--large" role="img">
               <use xlink:href="#link"/>
             </svg>
