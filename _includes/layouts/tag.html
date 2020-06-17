@@ -1,24 +1,16 @@
 ---
 layout: default
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+permalink: /tags/{{tag}}/
 ---
 
-{% assign filteredPosts = site.posts | where_exp: "post", "post.tags contains page.title" %}
-
 <h1 class="u-textCenter">
-  Tagged #{{page.title}}
+  Tagged #{{tag}}
 </h1>
 
 <div class="Masonry">
-  {% for post in filteredPosts %}
-    {% include resource-item.html
-      title=post.title
-      content=post.content
-      date=post.date
-      url=post.url
-      tags=post.tags
-      sourceURL=post.sourceURL
-      imageExt=post.imageExt
-      slug=post.slug
-    %}
-  {% endfor %}
+  {% comment %}@TODO{% endcomment %}
 </div>
