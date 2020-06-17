@@ -1,54 +1,26 @@
-{% if paginator.total_pages > 1 %}
-  {% if paginator.page < paginator.total_pages %}
-    {% assign currentOffset = 1 %}
-  {% else %}
-    {% assign currentOffset = 2 %}
-  {% endif %}
+{% comment %}
+  @TODO This is a simplified version of the navigation from the Jekyll version
+  Pagination variables/logic does not map cleanly between Jekyll and 11ty... 
+  Managing that conversion in addition to deciphering the tricky logic that toggled
+  the next/previous arrows was making my head hurt, so I conciously skipped the arrows
+  for now. Also of note: 11ty page paths are 0-indexed, which means the third page
+  will have the path: /2/. This feels unintuitive to me, but comes straight from the docs.
+  This may be a configurable thing, but I ran out of time (for now). —Emerson
+{% endcomment %}
+{% if pagination.pages.size > 1 %}
   <nav class="u-containProse" aria-label="Pagination">
-    <ul class="Pagination {% if paginator.page > 1 %}Pagination--withPrevious{% endif %} {% if paginator.page < paginator.total_pages %}Pagination--withNext{% endif %}">
-      {% for page in (1..paginator.total_pages) %}
-        {% assign currPageMinusCurrOffset = paginator.page | minus: currentOffset %}
-        <li{% if page < currPageMinusCurrOffset %} class="u-hidden u-sm-block"{% endif %}>
-          {% if page == paginator.page %}
+    <ul class="Pagination {% if pagination.pageNumber > 0 %}Pagination--withPrevious{% endif %} {% if pagination.pageNumber < pagination.pages.size %}Pagination--withNext{% endif %}">
+      {% for pageEntry in pagination.pages %}
+        <li class="u-hidden u-sm-block">
+          {% if forloop.index0 == pagination.pageNumber %}
             <span class="Pagination-item Pagination-item--muted">
               <span class="u-hiddenVisually">Currently viewing page</span>
-              {{page}}
+              {{forloop.index}}
             </span>
           {% else %}
-          <a class="Pagination-item" href=
-            {% if page == 1%}
-              "/"
-            {% else %}
-              "{{ site.paginate_path | replace: ':num', page }}"
-            {% endif %}>
-              {% assign pageMinusOne = paginator.page | minus: 1 %}
-              {% if page == pageMinusOne %}
-                <span class="Pagination-item Pagination-item--previous">
-                  <svg viewBox="0 0 24 24" width="24" height="24" aria-labelledby="pagination-previous-title" class="Icon">
-                    <title id="pagination-previous-title">Previous:</title>
-                    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)">
-                      <polyline points="15 5 22 12 15 19"/>
-                      <line x1="20" y1="12" x2="2" y2="12"/>
-                    </g>
-                  </svg>
-                </span>
-              {% endif %}
-
-              {% assign pagePlusOne = paginator.page | plus: 1 %}
-              {% if page == pagePlusOne %}
-                <span class="Pagination-item Pagination-item--next">
-                  <svg viewBox="0 0 24 24" width="24" height="24" aria-labelledby="pagination-next-title" class="Icon">
-                    <title id="pagination-next-title">Next:</title>
-                    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-                      <polyline points="15 5 22 12 15 19"/>
-                      <line x1="20" y1="12" x2="2" y2="12"/>
-                    </g>
-                  </svg>
-                </span>
-              {% endif %}
-
+          <a class="Pagination-item" href="{{ pagination.hrefs[forloop.index0] }}">
               <span class="u-hiddenVisually">Page</span>
-              {{page}}
+              {{forloop.index}}
             </a>
           {% endif %}
         </li>
