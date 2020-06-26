@@ -1,0 +1,30 @@
+---
+layout: default
+pagination:
+  data: collections
+  size: 1
+  alias: tag
+  filter:
+    - all
+    - post
+permalink: "/tags/{{tag | slug}}/"
+---
+
+<h1 class="u-textCenter">
+  Tagged #{{tag}}
+</h1>
+
+<div class="Masonry">
+{% for post in collections[tag] %}
+  {% include resource-item.html,
+      title: post.title, 
+      content: post.templateContent, 
+      date: post.date, 
+      permalink: post.url, 
+      slug: post.fileSlug, 
+      tags: post.data.tags, 
+      sourceURL: post.data.sourceURL, 
+      imageExt: post.data.imageExt 
+  %}
+{% endfor %}
+</div>

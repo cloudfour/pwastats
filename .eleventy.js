@@ -13,11 +13,6 @@ module.exports = function(eleventyConfig) {
 	  return collection.getFilteredByGlob('_posts/*.md');
 	});
 
-	eleventyConfig.addCollection('tag', collection => {
-	  return collection.getFilteredByGlob('_tags/*.md');
-	});
-
-
 	return {
 		dir: {
 			input: "./",

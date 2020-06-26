@@ -2,7 +2,7 @@
 title: Commonfloor
 sourceURL: https://medium.com/awebdeveloper/pwa-is-future-of-mobile-how-to-tame-it-855dd42df0ec
 tags:
-- App-shell
+- App Shell
 - E-commerce
 - Performance
 - Social
