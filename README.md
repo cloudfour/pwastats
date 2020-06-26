@@ -21,19 +21,7 @@ npm install
 npx @11ty/eleventy --serve
 ```
 
-For local development:
-
-```
-npm start
-```
-
-For a single build:
-
-```
-npm run build
-```
-
-View the local site at http://localhost:4000.
+View the local site at http://localhost:8080.
 
 ### Fetching an icon for a PWA
 
