@@ -1,6 +1,6 @@
 module.exports = function(eleventyConfig) {
 
-	// aliases for backwards support of jekyll layouts
+  // aliases for backwards support of jekyll layouts
   eleventyConfig.addLayoutAlias('blank', 'layouts/blank.html');
   eleventyConfig.addLayoutAlias('error', 'layouts/error.html');
   eleventyConfig.addLayoutAlias('default', 'layouts/default.html');
@@ -12,6 +12,16 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addCollection('post', collection => {
 	  return collection.getFilteredByGlob('_posts/*.md');
 	});
+
+  eleventyConfig.addPassthroughCopy("images");
+
+  eleventyConfig.setTemplateFormats([
+    "svg",
+    "png",
+    "js",
+    "json",
+    "ico"
+  ]);
 
 	return {
 		dir: {
