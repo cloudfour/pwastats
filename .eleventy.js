@@ -15,14 +15,6 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("images");
 
-  eleventyConfig.setTemplateFormats([
-    "svg",
-    "png",
-    "js",
-    "json",
-    "ico"
-  ]);
-
 	return {
 		dir: {
 			input: "./",
