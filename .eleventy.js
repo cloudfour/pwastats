@@ -9,9 +9,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias('tag', 'layouts/tag.html');
 
   // configure post collection
-	eleventyConfig.addCollection('post', collection => {
-	  return collection.getFilteredByGlob('_posts/*.md');
-	});
+  eleventyConfig.addCollection('post', collection => {
+    return collection.getFilteredByGlob('_posts/*.md');
+  });
 
   // non-template files that we want to serve
   eleventyConfig.addPassthroughCopy("images");
@@ -23,10 +23,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("*.svg");
   eleventyConfig.addPassthroughCopy("sw.js");
 
-	return {
-		dir: {
-			input: "./",
-			output: "./_site"
-		}
-	}
+  return {
+    dir: {
+      input: "./",
+      output: "./_site"
+    }
+  }
 }
