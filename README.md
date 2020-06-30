@@ -14,14 +14,26 @@ This site is built with [Eleventy](https://www.11ty.dev/).
 
 This project relies on [Node](https://nodejs.org/), and [npm](https://www.npmjs.com/). Before following these steps you'll need to [install node and npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm) if you haven't already.
 
+Installation:
+
 ```sh
 git clone git@github.com:cloudfour/pwastats.git
 cd pwastats
 npm install
-npm run start
 ```
 
-View the local site at http://localhost:8080.
+For local development:
+
+```
+npm start
+```
+This will compile the site into the \_sites directory and run a local file server where you can preview the site: http://localhost:8080
+
+For a single build:
+
+```
+npm run build
+```
 
 ### Fetching an icon for a PWA
 
