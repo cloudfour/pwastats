@@ -18,7 +18,7 @@ This project relies on [Node](https://nodejs.org/), and [npm](https://www.npmjs.
 git clone git@github.com:cloudfour/pwastats.git
 cd pwastats
 npm install
-npx @11ty/eleventy --serve
+npm run start
 ```
 
 View the local site at http://localhost:8080.
