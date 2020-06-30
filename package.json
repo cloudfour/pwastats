@@ -37,8 +37,8 @@
     "fetch-icon": "./scripts/fetch-icon.js",
     "resize-images": "./scripts/resize-images.js",
     "purgecss": "./scripts/purgecss.js",
-    "start": "npm run purgecss; bundle exec jekyll serve",
-    "build": "npm run purgecss; bundle exec jekyll build"
+    "start": "npm run purgecss; eleventy --serve",
+    "build": "npm run purgecss; eleventy"
   },
   "repository": {
     "type": "git",
