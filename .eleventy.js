@@ -13,7 +13,15 @@ module.exports = function(eleventyConfig) {
 	  return collection.getFilteredByGlob('_posts/*.md');
 	});
 
+  // non-template files that we want to serve
   eleventyConfig.addPassthroughCopy("images");
+  eleventyConfig.addPassthroughCopy("js");
+  eleventyConfig.addPassthroughCopy("main.css");
+  eleventyConfig.addPassthroughCopy("*.png");
+  eleventyConfig.addPassthroughCopy("favicon.ico");
+  eleventyConfig.addPassthroughCopy("manifest.json");
+  eleventyConfig.addPassthroughCopy("*.svg");
+  eleventyConfig.addPassthroughCopy("sw.js");
 
 	return {
 		dir: {
