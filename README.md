@@ -16,18 +16,16 @@ This project relies on [Node](https://nodejs.org/), and [npm](https://www.npmjs.
 
 Installation:
 
-```sh
-git clone git@github.com:cloudfour/pwastats.git
-cd pwastats
-npm install
-```
+1. Clone this repository.
+1. `cd` into the directory.
+1. Run `npm ci` to install dependencies.
 
 For local development:
 
 ```
 npm start
 ```
-This will compile the site into the \_sites directory and run a local file server where you can preview the site: http://localhost:8080
+This will compile the site into the \_site directory and run a local file server where you can preview the site: http://localhost:8080
 
 For a single build:
 
