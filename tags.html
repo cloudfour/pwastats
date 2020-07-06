@@ -17,14 +17,14 @@ permalink: "/tags/{{tag | slug}}/"
 <div class="Masonry">
 {% for post in collections[tag] %}
   {% include resource-item.html,
-      title: post.title, 
-      content: post.templateContent, 
-      date: post.date, 
-      permalink: post.url, 
-      slug: post.fileSlug, 
-      tags: post.data.tags, 
-      sourceURL: post.data.sourceURL, 
-      imageExt: post.data.imageExt 
+      title: post.title,
+      content: post.templateContent,
+      date: post.date,
+      permalink: post.url,
+      slug: post.fileSlug,
+      tags: post.data.tags,
+      sourceURL: post.data.sourceURL,
+      imageExt: post.data.imageExt
   %}
 {% endfor %}
 </div>
