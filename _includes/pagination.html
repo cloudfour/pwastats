@@ -1,30 +1,74 @@
 {% comment %}
-  @TODO This is a simplified version of the navigation from the Jekyll version
-  Pagination variables/logic does not map cleanly between Jekyll and 11ty... 
-  Managing that conversion in addition to deciphering the tricky logic that toggled
-  the next/previous arrows was making my head hurt, so I conciously skipped the arrows
-  for now. Also of note: 11ty page paths are 0-indexed, which means the third page
-  will have the path: /2/. This feels unintuitive to me, but comes straight from the docs.
-  This may be a configurable thing, but I ran out of time (for now). —Emerson
+The logic that follows is tricky:
+* all navigation links are printed within a single forloop
+* the next/prev arrows are printed inline, then abs positioned to the sides
+* the arrows are children of the same <a> as the corresponding page #
+
+Gotchas:
+* pagination.pageNumber is ZERO based
+* pagination.pageNumber returns a string (ex: "3") which won't behave as expected when compared with integers
+* the workaround for this ^ is to use a filter like `| minus: 0` that returns an int.
 {% endcomment %}
+
+{% assign lastPage = pagination.pages.size | minus: 0 %}
+{% assign prevPageIndex = pagination.pageNumber | minus: 1 %}
+{% assign nextPageIndex = pagination.pageNumber | plus: 1 %}
+{% assign pageNumber = pagination.pageNumber | plus: 1 %}
+
 {% if pagination.pages.size > 1 %}
   <nav class="u-containProse" aria-label="Pagination">
-    <ul class="Pagination {% if pagination.pageNumber > 0 %}Pagination--withPrevious{% endif %} {% if pagination.pageNumber < pagination.pages.size %}Pagination--withNext{% endif %}">
+    <ul class="Pagination {% if pageNumber > 1 %}Pagination--withPrevious{% endif %} {% if pageNumber < pagination.pages.size %}Pagination--withNext{% endif %}">
+
       {% for pageEntry in pagination.pages %}
+        {% assign index = forloop.index0 | minus: 0 %}
+
         <li class="u-hidden u-sm-block">
           {% if forloop.index0 == pagination.pageNumber %}
             <span class="Pagination-item Pagination-item--muted">
               <span class="u-hiddenVisually">Currently viewing page</span>
-              {{forloop.index}}
+              {{pagination.pageNumber | plus: 1}}
             </span>
           {% else %}
-          <a class="Pagination-item" href="{{ pagination.hrefs[forloop.index0] }}">
+            <a class="Pagination-item" href="{{ pagination.hrefs[forloop.index0] }}">
+              {% comment %}
+              If this page link == the previous page, print the left arrow that will be positioned left
+              {% endcomment %}
+              {% if index == prevPageIndex %}
+                <span class="Pagination-item Pagination-item--previous">
+                  <svg viewBox="0 0 24 24" width="24" height="24" aria-labelledby="pagination-previous-title" class="Icon">
+                    <title id="pagination-previous-title">Previous:</title>
+                    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)">
+                      <polyline points="15 5 22 12 15 19"/>
+                      <line x1="20" y1="12" x2="2" y2="12"/>
+                    </g>
+                  </svg>
+                </span>
+              {% endif %}
+              {% comment %}
+              If this page link == the next page, print the right arrow that will be positioned right
+              {% endcomment %}
+              {% if index == nextPageIndex %}
+                <span class="Pagination-item Pagination-item--next">
+                  <svg viewBox="0 0 24 24" width="24" height="24" aria-labelledby="pagination-next-title" class="Icon">
+                    <title id="pagination-next-title">Next:</title>
+                    <g fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="15 5 22 12 15 19"/>
+                      <line x1="20" y1="12" x2="2" y2="12"/>
+                    </g>
+                  </svg>
+                </span>
+              {% endif %}
               <span class="u-hiddenVisually">Page</span>
+              {% comment %}
+              Here we print index instead of index0 becuase humans don't like "Page 0"
+              {% endcomment %}
               {{forloop.index}}
             </a>
           {% endif %}
         </li>
+
       {% endfor %}
+
     </ul>
   </nav>
 {% endif %}
