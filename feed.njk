@@ -30,7 +30,7 @@
     <title>{{ post.data.title }}</title>
     <link href="{{ absolutePostUrl }}"/>
     <updated>{{ post.date | rssDate }}</updated>
-    <id>{{ absolutePostUrl }}</id>
+    <id>{# Removing trailing slash to match legacy IDs #}{% set urlLength = absolutePostUrl | length  %}{% set spliceAt = urlLength - 1 %}{{ absolutePostUrl | truncate(spliceAt, true, '') }}</id>
     <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
     <author>
       <name>{{metadata.author.name}}</name>
