@@ -1,4 +1,5 @@
 const fs = require("fs");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
 
@@ -41,6 +42,9 @@ module.exports = function(eleventyConfig) {
       }
     }
   });
+
+  // register rss plugin
+  eleventyConfig.addPlugin(pluginRss);
 
   return {
     dir: {
