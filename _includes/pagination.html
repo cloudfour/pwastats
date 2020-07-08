@@ -15,6 +15,18 @@ Gotchas:
 {% assign nextPageIndex = pagination.pageNumber | plus: 1 %}
 {% assign pageNumber = pagination.pageNumber | plus: 1 %}
 
+{% comment %}
+On small screens we show only a few of the page links. The following variable is used in the loop to determine
+which page links get the class that hides them on small screens. The conditional accounts for the arrow that
+dissapears on the final page
+{% endcomment %}
+{% if pageNumber < lastPage %}
+  {% assign smallScreenVisibleOffset = 2 %}
+{% else %}
+  {% assign smallScreenVisibleOffset = 3 %}
+{% endif %}
+{% assign smallScreenVisibilityCutoff = pageNumber | minus: smallScreenVisibleOffset %}
+
 {% if pagination.pages.size > 1 %}
   <nav class="u-containProse" aria-label="Pagination">
     <ul class="Pagination {% if pageNumber > 1 %}Pagination--withPrevious{% endif %} {% if pageNumber < pagination.pages.size %}Pagination--withNext{% endif %}">
@@ -22,7 +34,7 @@ Gotchas:
       {% for pageEntry in pagination.pages %}
         {% assign index = forloop.index0 | minus: 0 %}
 
-        <li class="u-hidden u-sm-block">
+        <li {% if index < smallScreenVisibilityCutoff %}class="u-hidden u-sm-block"{% endif %}>
           {% if forloop.index0 == pagination.pageNumber %}
             <span class="Pagination-item Pagination-item--muted">
               <span class="u-hiddenVisually">Currently viewing page</span>
