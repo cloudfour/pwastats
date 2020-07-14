@@ -11,17 +11,19 @@
     "sw-runtime-caching": "0.0.17"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
     "chalk": "^2.4.1",
     "chalk-cli": "^3.0.0",
     "imagemin": "^5.3.1",
-    "imagemin-mozjpeg": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
     "imagemin-pngquant": "^5.1.0",
     "inquirer": "^6.0.0",
     "node-fetch": "^2.1.2",
     "prettier": "^1.13.7",
     "purgecss": "^1.0.1",
     "request-x-ray": "^0.1.4",
-    "sharp": "^0.20.5",
+    "sharp": "^0.25.4",
     "svgo": "^1.0.5",
     "x-ray": "^2.3.3"
   },
@@ -36,8 +38,8 @@
     "fetch-icon": "./scripts/fetch-icon.js",
     "resize-images": "./scripts/resize-images.js",
     "purgecss": "./scripts/purgecss.js",
-    "start": "npm run purgecss; bundle exec jekyll serve",
-    "build": "npm run purgecss; bundle exec jekyll build"
+    "start": "npm run purgecss && eleventy --serve",
+    "build": "npm run purgecss && eleventy"
   },
   "repository": {
     "type": "git",

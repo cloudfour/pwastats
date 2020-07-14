@@ -4,7 +4,7 @@ sourceURL: https://twitter.com/davidbrunelle/status/993960071406080000?ref_src=t
 
 tags:
   - Conversions
-  - E-Commerce
+  - E-commerce
   - Performance
   - Service Worker
 ---

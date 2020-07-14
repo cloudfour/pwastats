@@ -3,7 +3,7 @@ title: Debenhams
 sourceURL: https://www.thinkwithgoogle.com/intl/en-gb/success-stories/global-success-stories/debenhams-progressive-web-app-boosts-speed-conversions-and-revenue/
 tags:
   - Conversions
-  - E-Commerce
+  - E-commerce
   - Performance
   - Revenue
   - Service Worker

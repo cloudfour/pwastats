@@ -1,0 +1,43 @@
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "PWA Stats",
+    "subtitle": "A collection of Progressive Web App case studies.",
+    "url": "https://www.pwastats.com/",
+    "feedUrl": "https://www.pwastats.com/feed.xml",
+    "author": {
+      "name": "PWA Community"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ metadata.feedUrl }}" rel="self" type="application/atom+xml"/>
+  <link href="{{ metadata.url }}" rel="alternate" type="text/html" />
+  <updated>{{ collections.post | rssLastUpdatedDate }}</updated>
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+  </author>
+  {%- for post in collections.post|reverse  %}
+  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  <entry>
+    <title>{{ post.data.title }}</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated>{{ post.date | rssDate }}</updated>
+    <id>{# Removing trailing slash to match legacy IDs #}{% set urlLength = absolutePostUrl | length  %}{% set spliceAt = urlLength - 1 %}{{ absolutePostUrl | truncate(spliceAt, true, '') }}</id>
+    <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+    <author>
+      <name>{{metadata.author.name}}</name>
+    </author>
+    {%- for tag in post.data.tags %}
+    <category term="{{tag}}"/>
+    {%- endfor %}
+  </entry>
+  {%- endfor %}
+</feed>

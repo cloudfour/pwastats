@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<div class="u-containProse u-md-textGrow1">
+  {% include resource-item.html,
+        title: title,
+        content: content,
+        date: page.date,
+        permalink: page.url,
+        slug: page.fileSlug,
+        tags: tags,
+        sourceURL: sourceURL,
+        imageExt: imageExt
+  %}
+</div>

@@ -1,0 +1,17 @@
+{
+	"title": "PWA Stats",
+	"email": "info@cloudfour.com",
+	"description": "A collection of Progressive Web App case studies.",
+	"repository": "cloudfour/pwastats",
+	"baseurl": "",
+	"url": "https://www.pwastats.com",
+	"twitter_username": "cloudfour",
+	"github_username": "cloudfour",
+	"author": "PWA Community",
+	"timezone": "America/Los_Angeles",
+	"permalink": "/:year/:month/:title/",
+  "github": {
+    "repository_url": "https://github.com/cloudfour/pwastats",
+    "issues_url": "https://github.com/cloudfour/pwastats/issues/new"
+  }
+}

@@ -8,33 +8,30 @@ See [CONTRIBUTING.md](.github/CONTRIBUTING.md)
 
 ## Developing
 
-This site is built with [Jekyll](https://jekyllrb.com/docs/home/).
+This site is built with [Eleventy](https://www.11ty.dev/).
 
 ### Quick start
 
-This project relies on [Ruby](https://www.ruby-lang.org/en/), [Node](https://nodejs.org/), and [npm](https://www.npmjs.com/). Before following these steps you'll need to [set up a Ruby dev environment](https://jekyllrb.com/docs/installation/) as well as [install node and npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm) if you haven't already.
+This project relies on [Node](https://nodejs.org/), and [npm](https://www.npmjs.com/). Before following these steps you'll need to [install node and npm](https://blog.npmjs.org/post/85484771375/how-to-install-npm) if you haven't already.
 
-```sh
-git clone git@github.com:cloudfour/pwastats.git
-cd pwastats
-gem install bundler
-bundle install
-npm install
-```
+Installation:
+
+1. Clone this repository.
+1. `cd` into the directory.
+1. Run `npm ci` to install dependencies.
 
 For local development:
 
 ```
 npm start
 ```
+This will compile the site into the \_site directory and run a local file server where you can preview the site: http://localhost:8080
 
 For a single build:
 
 ```
 npm run build
 ```
-
-View the local site at http://localhost:4000.
 
 ### Fetching an icon for a PWA
 
