@@ -1,16 +1,14 @@
 #!/usr/bin/env node
 
 const Purgecss = require('purgecss');
-const fetch = require('node-fetch');
-const { writeFileSync } = require('fs');
+const { writeFileSync, readFileSync } = require('fs');
+const path = require('path');
 
 /**
  * Fetches the latest css from the pattern library, and extracts the used css from it to main.css
  */
-const main = async () => {
-  const originalCss = await fetch(
-    'https://cloudfour-patterns.netlify.com/assets/toolkit/styles/toolkit.css'
-  ).then(res => res.text());
+const main = () => {
+  const originalCss = readFileSync(path.join(__dirname, 'toolkit.css'));
   console.log('Fetched toolkit css, starting purging process');
   const purgeCss = new Purgecss({
     content: ['**/*.html'],
